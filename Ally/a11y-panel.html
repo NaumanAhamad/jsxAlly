@@ -1,0 +1,177 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/a11y-tool.min.css">
+</head>
+<body id="main">
+	<div class="container-fluid analyze-button-wrapper">
+			<div class="row header">
+				<div class="col-xs-6 col-sm-4 heading-and-count-wrapper">
+					<div class="a11y-logo" title="Ally"><img src="icon/icon.png" class="logo" alt="Ally" /></div>
+					<div class="analyze-wrapper">						<input type="button" id="analyzePage" name="show-a11y-dev-panel" value="Analyze">
+					</div>
+				</div>
+				<div class="col-sm-8 dom-connector">
+					<div class="text-resizer">
+						<div id="a11y-resize-slider-contrainer">
+						   <label class="a11y-resize-label" for="a11y-resize-slider" title="100%"><span class="sr-only hidden-label-text">Text Size </span><span class="current-text-size">Medium</span></label>
+						   <div class="a11y-slider-wrapper">
+						      <span class="very-small-text">A</span>
+						      <span class="slider-tool-wrapper"><input id="a11y-resize-slider-home" type="range" min="-1" max="1" step="0.5" list="resizePoints"></span>
+						      <span class="very-large-text">A</span>
+						   </div>
+						</div>
+					</div>
+					<div class="cognizant-logo-container" title="Cognizant"><img src="icon/cognizant.png" class="cognizant-logo" alt="Cognizant"></div>
+
+				</div>
+			</div>
+			<div class="row a11y-content-wrapper">
+				<div class="col-xs-12 col-sm-4 category-section analyze-message-wrapper">
+					<p class="analyze-message">Please click the "Analyze" button to run accessibility testing for this page.</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 recomendation-highlights" >
+					<div class="highlights-here">
+						<p class="text-bold">Introduction:</p>
+						<p>We have developed an 'Ally Tool' which scans the Webpage code and helps to identify the Accessibility issues. It provides a quick and easy way to identify non-functional code related Accessibility issues.</p>
+						<p>While automated accessibility testing tool provide a quick, easy way of assessing websites for accessibility compliance, with caution and automation should only be a part of overall accessibility testing process.</p>
+					</div>
+					<div class="highlights-here">
+						<p><span class="text-bold">Version: </span><span>1.0</span></p>
+					</div>
+					<div class="highlights-here">
+						<p class="text-bold">Features:</p>
+						<ul>
+							<li>A wide range of issues existing in the page, are highlighted and explained in simple words.</li>
+							<li>Tool covers categories which are a must to achieve from Accessibility perspective.</li>
+							<li>Tool provides 'Recommendations' to follow, based on the issues highlighted, in order to make your page Accessible.</li>
+							<li>Allows you to inspect the 'Issues' in the Developer toolbar which makes it easier for users to understand, allows them to study the issues then and there. Also, it involves lesser user interactions.</li>
+							<li>Provide detailed 'Guidelines' as well, for better understanding of Accessibility.</li>
+							<li>Allows you to download an 'Excel' report which lists all the issues highlighted in the page. This can help you to keep a track of ADA testing for your future reference.</li>
+							<li>You can have multiple versions as well, for the 'Excel' report, based on your rounds of testing.</li>
+							<li>Current version Ally 1.0, is compatible with Chrome- Desktop.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="container-fluid results-wrapper hide" >
+			<div class="row header">
+				<div class="col-xs-6 col-sm-4 heading-and-count-wrapper">
+					<div class="a11y-logo" title="Ally"><img src="icon/icon.png" class="logo" alt="Ally"/></div>
+					<div class="a11y-level-wrapper">
+						<a href="#" class="a11y-level-link selected"><span class="badge">A</span></a>
+						<a href="#" class="a11y-level-link selected"><span class="badge">AA</span></a>
+						<a href="#" class="a11y-level-link disabled"><span class="badge">AAA</span></a>
+					</div>
+					<div class="analyze-wrapper reanalyze-wrapper">
+						<input type="button" id="reAnalyzePage" name="show-a11y-dev-panel" value="Re-Analyze">
+					</div>
+
+				</div>
+				<div class="col-sm-8 dom-connector">
+					<div class="text-resizer">
+						<div id="a11y-resize-slider-contrainer">
+						   <label class="a11y-resize-label" for="a11y-resize-slider" title="100%"><span class="sr-only hidden-label-text">Text Size </span><span class="current-text-size">Medium</span></label>
+						   <div class="a11y-slider-wrapper">
+						      <span class="very-small-text">A</span>
+						      <span class="slider-tool-wrapper"><input id="a11y-resize-slider" type="range" min="-1" max="1" step="0.5" list="resizePoints"></span>
+						      <span class="very-large-text">A</span>
+						   </div>
+						</div>
+					</div>
+					<div class="connector-wrapper">
+						<span><a href="#" id="disableCss" class="disable-css"><span class="icon-disable icon"></span>Disable CSS</a></span><!--  
+					--><span class="utility-toggler">
+							<span><a href="#" id="inspectNode" class="issue-inspect"><span class="icon-inspect icon"></span>Inspect Node</a></span><!-- 
+							 --><span><a href="#" id="highlightElem" class="issue-highlight"><span class="icon-highlight icon"></span >Highlight</a></span>
+						</span>
+					</div>
+					<div class="cognizant-logo-container" title="Cognizant"><img src="icon/cognizant.png" class="cognizant-logo" alt="Cognizant"></div>
+
+				</div>
+			</div>
+			<div class="row a11y-content-wrapper hide">
+				<div class="col-xs-12 col-sm-4 category-section">
+					<div class="issue-count-container">
+						<span class="total-issues">Total Issues: <span class="total-issues-count"></span></span>
+						<span class="total-errors">Errors: <span class="total-errors-count"></span></span>
+						<span class="total-warnings">Warnings: <span class="total-warnings-count"></span></span>
+						<span class="export-report">
+							<table id="exportIssues" class="hide">
+								<thead>
+									<tr>
+										<th>Element</th>
+										<th>XPath</th>
+										<th>Issue</th>
+										<th>Issue Type</th>
+										<th>Category</th>
+										<th>Criteria</th>
+										<th>Recommendation</th>
+										<th>Status</th>
+										<th>Developers Comment</th>
+									</tr>
+								</thead>
+							</table>
+						</span>
+
+					</div>
+					<ul class="nav nav-pills nav-stacked category-list">
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-8 recomendation-column" >
+					<div class="row recommendation-heading" >
+						<p class="current-issue-text"></p>
+					</div>
+					<div class="col-xs-12 col-sm-6 result-left">
+						<h5 class="result-heading text-bold">RECOMMENDATION</h5>
+						<div class="issue-recommendation"></div>
+						<h5 class="result-heading text-bold">ELEMENT SOURCE</h5>
+						<div class="well issue-source"></div>
+						<h5 class="result-heading text-bold">ELEMENT XPATH</h5>
+						<div class="well issue-location"></div>
+						<h5 class="result-heading text-bold">Developer Comment</h5>
+						<div>
+							<textarea name="dev-comments" id="devComments" class="well dev-comments" placeholder="Add your comment here..."></textarea>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 result-right">
+						<h5 class="result-heading text-bold">WCAG CRITERIA</h5>
+						<div class="issue-criteria"></div>
+						<h5 class="result-heading text-bold">GUIDELINES</h5>
+						<div class="issue-guideline"></div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row success-container hide">
+				<div class="col-xs-12 col-sm-4 category-section analyze-message-wrapper" tabindex="1">
+					<p class="analyze-head analyze-message">Congratulations!!</p>
+					<p class="analyze-message">Ally has detected ZERO errors on your page. Please go ahead with manual testing, to check advanced Accessibility compliance.</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 recomendation-highlights">
+
+					<div class="highlights-here">
+						<div class="success-image-right"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row loading-container">
+				<div class="loader"></div>
+			</div>
+	</div>
+	<!-- <script src="scripts/jquery-1.11.1.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/jquery.dataTables.min.js"></script>
+	<script src="scripts/dataTables.buttons.min.js"></script>
+	<script src="scripts/jszip.min.js"></script>
+	<script src="scripts/buttons.html5.min.js"></script>
+	<script src="scripts/jquery.nicescroll.min.js"></script> -->
+	<script src="scripts/libs.min.js"></script>
+	<script src="scripts/app-dev-tool.min.js"></script>
+</body>
+</html>

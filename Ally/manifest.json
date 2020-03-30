@@ -1,0 +1,45 @@
+{
+  "name": "Ally",
+  "description": "Accessibility Testing Tool",
+  "version": "1.0",
+  "minimum_chrome_version": "54",
+  "offline_enabled": true,
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "file://*/*"
+  ],
+  "web_accessible_resources": [
+    "data/axDetails.json",
+    "css/a11y-window.min.css"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["scripts/jquery-1.11.1.min.js","scripts/app.min.js"],
+      "css": ["css/a11y-window.min.css"]
+      
+    }
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Accessibility Testing Tool",
+    "default_icon": "icon/icon-dark.png",
+    "default_popup": "a11y-popup.html"
+  },
+  "icons": {
+     "128": "icon/icon-dark.png",
+     "16": "icon/icon-dark.png",
+     "19": "icon/icon-dark.png",
+     "32": "icon/icon-dark.png",
+     "48": "icon/icon-dark.png"
+  },
+  "devtools_page": "a11y-dev-tool.html",
+  "manifest_version": 2
+}

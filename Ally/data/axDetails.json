@@ -1,0 +1,2094 @@
+{
+   "html": {
+      "attributes": {
+         "lang": true
+      },
+      "issues": {
+         "lang": {
+            "errorText": "lang attribute is not present or it's provided value is incorrect on &lt;html&gt tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "3.1.1"
+         }
+      },
+      "recommendations": {
+         "lang": "Ensure that lang attribute is provided to &lt;html&gt tag and it must have a valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Primary language of the page</h5><p class='para'>Most screen readers can read several different languages. Users select a default language when installing and configuring their screen reader, so if no language is specified in the HTML document, the screen reader will read the document in the user's default language. Users that speak more than one language though, such as many French Canadians, Europeans, or immigrants to a new country, will likely access websites in more than one language, and they will want to hear each language read correctly, with the proper accent and pronunciation.</p> <p class='para'>Thus the Primary language for any Webpage must be indentified accurately on the <html> element. If the language is not specified, or if it the language designation is inaccurate, a screen reader will read the document in the user's default language, which may result in a very bad accent if the page language doesn't match the user's default. In fact, it can be very difficult to understand anything when screen readers are using the wrong language library.</p><p class='para'>The primary language of the page must be identified with a valid value on the <html> element. The language designation must come from a standard list of language codes, which includes en (English), fr (French), es (Spanish), and others, according to the specification. Anything else (such as lang='English') will not work. Some screen readers support only two-letter codes. Other screen readers support regional language codes, such as en-us (American English) or fr-ca (French Canadian). </p><h2>Language of parts within the page</h2><p class='para'>Inline language changes must be identified with a valid 'lang' attribute. Identify any changes of language within the document. The lang attribute can be applied to block level elements (<div>, <h1>, <p>, <table>, etc.) as well as inline elements (<span>, <a>, <strong>, etc.).</p><p class='para'><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html'> Reference link: <span class=''>to W3C Guidebook</span></a></p></div>"
+   },
+   "skip-to-main-content": {
+      "attributes": {
+         "content": [
+            "skip to main content",
+            "skip to content"
+         ],
+         "href": true
+      },
+      "issues": {
+         "content": {
+            "errorText": "Skip to Main Content Link is not available in the page.",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.1"
+         },
+         "href": {
+            "errorText": "Skip to Main content link is broken.",
+            "violation": false,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.1"
+         }
+      },
+      "recommendations": {
+         "content": "Ensure that proper 'Skip to main content' link is provided to bypass blocks of repetitive content in the page and it must be the first element that receives focus.",
+         "href": "Ensure that 'Skip to Main content' link has proper href (href must target the 'Main' region in the page) and on click of it, focus moves to the main content in the page"
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Skip Navigation Links</h5><p class='para'>A keyboard-functional 'skip' link SHOULD be provided to allow keyboard users to navigate directly to the main content. The main content of a web page rarely comes first in a typical layout. Before users can arrive at the main content, they must skip past features like the website's logo and branding, the site search, the login widget, and the main navigation.</p><p class='para'>In some cases, a secondary navigation level also appears before the main content. The top section of a web page can be quite long. Providing a way to skip past all of the features at the top of a web page helps save keystrokes for keyboard users. </p><p class='para'>A 'skip navigation link' should be placed at the very beginning of the document, right after the opening <body> tag, to allow users to go past repetitive navigation, such as global navigation menus. It should point to the id at or just before the beginning of the main content on the page.</p><p class='para'>Often the appropriate destination is the &lt;h1&gt; at the beginning of the main content. Putting the 'skip navigation' link further down the page would defeat its purpose. </p><p class='para'>A skip link MUST be either visible at all times or visible on keyboard focus. <ul><li><strong>Option 1:</strong>Make the link visible all the time. The most accessible — though also probably the least popular — way to include a 'skip navigation' link in a design is to make it visible all of the time. All users, whether sighted or blind, will be able to take advantage of 'skip navigation' links like this.</li><li><strong>Option 2:</strong> Make the link visible on keyboard focus. Designers tend not to like the look of visible 'skip navigation' links, so they tend to hide them from sighted users. That can be acceptable, as long as the link becomes visible when it receives keyboard focus. The link can be hidden by default, using the CSS clip technique, then made visible by removing the CSS clip when the link receives focus.<br><strong>Note:</strong> Do NOT use display:none to hide 'skip navigation' links, because that will make them unavailable to keyboard users, including screen reader users.</li></ul></p><p class='para'><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "title": {
+      "attributes": {
+         "content": true
+      },
+      "issues": {
+         "error": {
+            "errorText": "&lt;title&gt; tag is not present on page.",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.2"
+         },
+         "content": {
+            "errorText": "&lt;title&gt; tag is empty",
+            "violation": false,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.2"
+         }
+      },
+      "recommendations": {
+         "error": "Ensure that &lt;title&gt; is provided and it must context-relevant page.",
+         "content": "Ensure that clear, concise, and context-relevant page title is provided."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Why Page Title?</h5><p class='para'>Page title is displayed in the tab, making it easy to identify open pages and to quickly switch between them. Search engines and site search tools also use the page title when displaying search results.</p><p class='para'>Effective titles help users quickly sift through the search results to identify the content they need. In this sense, good page titles are an important component of Accessibility in addition to search engine optimization (SEO).</p><p class='para'>Screen reader users rely on the title to quickly learn the identity and purpose of the page. If you leave off the title, screen reader users will have to browse the page and infer the identity and purpose from the content, which is highly inconvenient.</p><p class='para'>Any time the web address changes, whether due to a true page load event, or due to an AJAX call (as in single-page applications), or due to JavaScript event, the page &lt;title&gt; must change to reflect the new content. Otherwise, the page title will be out of sync with the content, which can lead to confusion, especially if t he user arrives at the page via a link sent to them or saved in a bookmark.</p><h5 class='heading-bold'>Meaningfull page title</h5><p class='para'><ul><li>The page title needs to correctly identify the identity or purpose of the page in a way that is useful to all users, but especially to screen reader users, who rely on the title to get a quick sense of the page without being able to look at it.</li><li>There is no technical limit on the length of a page title, nor is there a formal restriction on &lt;title&gt; length in accessibility guidelines, but it is best practice to keep it as short as possible, without sacrificing accuracy or informativeness.</li><li>To avoid confusion — especially for screen reader users — it's best if the &lt;title&gt; of a page is unique within the web site. Sometimes it is not possible or not practical to check for the uniqueness of the page &lt;title&gt;, but the goal is to give pages titles that allow for easy and accurate identification.</li><li>Unique information should come first in the page title. Page title must be constructed in an effective way to help all types of users understand the context of the page by the title of the page itself. It can be constructed as : Page name / Module Name/ Company name, seperated by ':' a colon.</li></ul></p><p>Read more about Page title at <a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-other-lang-id.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></p></div>"
+   },
+   "listParent": {
+      "attributes": {
+         "listChild": true
+      },
+      "issues": {
+         "listChild": [
+            {
+               "errorText": "Invalid child elements present under ul/ol tag.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            },
+            {
+               "errorText": "No &lt;li&gt; element present in ul/ol tag.",
+               "violation": false,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            }
+         ]
+      },
+      "recommendations": {
+         "listChild": [
+            "Ensure that &lt;li&gt; tag is the direct child element within ul/ol.",
+            "Ensure that ul/ol have proper &lt;li&gt; elements within."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Lists:</h5><p class='para'>Lists MUST be constructed using the appropriate semantic markup. There are three main types of lists in HTML: <ul><li><strong>Unordered lists:</strong>(&lt;ul&gt;) render as bulleted lists of list items (&lt;li&gt;). Unordered lists should be used when a set of items can be placed in any order.</li><li><strong>Ordered lists</strong>(&lt;ol&gt;) render as numbered lists of list items (&lt;li&gt;). Ordered lists should be used when the list items need to be placed in a specific order.</li><li><strong>Definition lists (or Description lists in HTML5)</strong>(&lt;dl&gt;) render as paired terms (&lt;dt&gt;) and definitions (&lt;dd&gt;). Definition/description lists are used to pair a term with its definition or a name with a value.</li></ul></p><p class='para'>Screen readers notify users when they come to a list, and tell them how many items are in a list. This helps listeners know what they are listening to, and what to expect as they listen to it.</p><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H48.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "li": {
+      "attributes": {
+         "listParent": true
+      },
+      "issues": {
+         "listParent": {
+            "errorText": "&lt;li&gt; element is present out of ul/ol tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         }
+      },
+      "recommendations": {
+         "listParent": "Ensure that &lt;li&gt; tags are wrapped inside ul/ol tags."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Lists:</h5><p class='para'>Lists MUST be constructed using the appropriate semantic markup. There are three main types of lists in HTML: <ul><li><strong>Unordered lists:</strong>(<ul>) render as bulleted lists of list items (<li>). Unordered lists should be used when a set of items can be placed in any order.</li><li><strong>Ordered lists</strong>(<ol>) render as numbered lists of list items (<li>). Ordered lists should be used when the list items need to be placed in a specific order.</li><li><strong>Definition lists (or Description lists in HTML5) </strong>(<dl>) render as paired terms (<dt>) and definitions (<dd>). Definition/description lists are used to pair a term with its definition or a name with a value.</li></ul></p><p class='para'>Screen readers notify users when they come to a list, and tell them how many items are in a list. This helps listeners know what they are listening to, and what to expect as they listen to it.</p><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H48.html' target='_blank' >Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "headingTag": {
+      "attributes": {
+         "content": true,
+         "h1-opener": true,
+         "h1-unique": true,
+         "order": true
+      },
+      "issues": {
+         "content": {
+            "errorText": "Headings(H1-H6) tag provided is empty.",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "order": {
+            "errorText": "Headings(H1-H6) are not provided in a hierarchical manner. Heading level H1/H2/H3/H4/H5/H6 is missing.",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "h1-opener": {
+            "errorText": "h1 should be the first heading tag.",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "h1-unique": {
+            "errorText": "multiple h1 tag found.",
+            "violation": false,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "content": "Ensure that appropriate Headings(H1-H6) text are provided.",
+         "order": "Ensure that Headings(H1-H6) are provided in a hierarchical manner to navigate through section and sub section. And no level must be skipped.",
+         "h1-opener": "Ensure that h1 is first heading tag in html.",
+         "h1-unique": "Ensure that there is single h1 tag in page."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Identify Headings, Why?</h5><p class='para'>Headings help with Content Organization and Navigation. Headings play a vital role in the accessibility level of any document, whether it is a Word, PDF or HTML document. They are used for navigation by screen reader users and they provide a clear structure of a document which benefits all users, making it easier to scan through the content.</p><p class='para'>And significantly, in the case of Word documents, properly styled headings make it very easy to auto generate a table of contents (TOC).</p><p class='para'>Headings improve search engine optimization (SEO) by highlighting the important parts of the web page and drawing attention to them. If the headings contain more search terms than meaningful structural information about a page, the headings will not be useful to screen reader users, and will defeat the purpose of using them for accessibility reasons.</p><h5 class='heading-bold'>Real Headings</h5><p class='para'><ul><li>Text that acts as a heading visually or structurally should be designated as a true heading in the markup. Headings are about logical structure, not visual effects. Big bold text may look like a heading to visual users, but screen readers ignore the size and font-weight of the text, so blind users cannot know a phrase is a heading unless it is marked up in the HTML code as such, using &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, or &lt;h6&gt;. </li><li>Text that does not act as a heading visually or structurally should not be marked as heading. If you want to create big, bold text for non-heading text, use styles to achieve that effect. If you use heading markup (&lt;h1&gt;, &lt;h2&gt;, etc.) for non-heading text, you will confuse screen reader users by creating an inaccurate structural outline of the page contents.</li></ul></p><h5 class='heading-bold'>Meaningful Text</h5><p class='para'><ul><li>Headings must be accurate and informative. Headings should be descriptive enough give users a good sense of the content they will find within that section of the document. When screen reader users pull up the list of headings, they will hear the level of the heading, plus the text within the heading, including alt text for any images inside the heading.</li><li>Heading text should be concise and relatively brief. There is no technical limit on the length of a heading, but a heading should be a short label for the section of content below the heading, to make it easy for users to browse the headings.</li></ul></p><h5 class='heading-bold'>Outline/Hierarchy of content</h5><p class='para'><ul><li>Headings should convey a clear and accurate structural outline of the sections of content of a web page. Create the structure first, then style the headings as you see fit. If the default size of the headings is too big for the look you have in mind, use styles to change the size, rather than jumping down to a lower heading level.</li><li>Headings should not skip hierarchical levels. Each level of heading,h1-h6, indicates the relationship from one part of the content to the other parts. The content under a heading relates logically to a heading above it. Similarly, the content within an &lt;h2&gt; block of content would relate logically under the &lt;h1&gt; that precedes it. In this way, the heading structure of a document can be used as a method to organize the document’s contents hierarchically much like an outline.</li></ul></p><h5 class='heading-bold'>Heading H1 : Best practice</h5><p class='para'><ul><li>The beginning of the main content SHOULD start with &lt;h1&gt;. Usually the best practice is to start the main content of a web page with a level 1 heading (&lt;h1&gt;), with no other headings before this high level heading. The sub-sections of the page should each be marked as level 2 headings (&lt;h2&gt;). If there are sub-sections within the level 2 sections, they should be marked as level 3 (&lt;h3&gt;) and so on. Anything that comes before the main content of the page probably should not be marked up with any headings at all, though this is not an iron-clad rule.</li><li>One of the main reasons that the &lt;h1&gt; should appear at the beginning of the main content is because screen reader users can use keyboard shortcuts to navigate directly to the first &lt;h1&gt;, which, in principle, should allow them to jump directly to the main content of the web page. If there is no &lt;h1&gt;, or if the &lt;h1&gt; appears somewhere other than at the start of the main content, screen reader users will have to listen to more of the web page to understand its structure, wasting valuable time.</li></div>"
+   },
+   "a": {
+      "attributes": {
+         "rel": [
+            "alternate",
+            "author",
+            "bookmark",
+            "external",
+            "help",
+            "license",
+            "next",
+            "nofollow",
+            "noreferrer",
+            "noopener",
+            "prev",
+            "search",
+            "tag"
+         ],
+         "href": true,
+         "tabindex": true,
+         "content": true,
+         "title": true,
+         "target": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+         ],
+         "data-toggle": {
+            "popover": true,
+            "tooltip": true,
+            "modal": true
+         },
+         "aria-label": true,
+         "aria-labelledby": true,
+         "aria-describedby": true
+      },
+      "issues": {
+         "rel": {
+            "errorText": "Invalid rel is present on &lt;a&gt; tag.",
+            "violation": true,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.4"
+         },
+         "href": [
+            {
+               "errorText": "href is not present for the &lt;a&gt; tag.",
+               "violation": true,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "Link is having downloadable content.",
+               "violation": false,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "tabindex": {
+            "errorText": "Invalid tab index is present on &lt;a&gt; tag.",
+            "violation": false,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         },
+         "content": [
+            {
+               "errorText": "Invalid link text.",
+               "violation": false,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "2.4.4"
+            },
+            {
+               "errorText": "Same link text is provided to multiple &lt;a&gt; tags.",
+               "violation": false,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "2.4.4"
+            }
+         ],
+         "title": {
+            "errorText": "Link text is same as of title text.",
+            "violation": false,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.4"
+         },
+         "target": {
+            "errorText": "Invalid value of target is provided.",
+            "violation": true,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         },
+         "data-toggle": {
+            "popover": {
+               "errorText": "Unable to open popover as no data-content attribute is present on &lt;a&gt; tag.",
+               "violation": true,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "2.4.4"
+            },
+            "tooltip": {
+               "errorText": "Unable to show tooltip as no title attribute is present on &lt;a&gt; tag.",
+               "violation": true,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "2.4.4"
+            },
+            "modal": {
+               "errorText": "Unable to open modal as no element is found related to data-target attribute of &lt;a&gt tag.",
+               "violation": true,
+               "category": "Links",
+               "criticality": "",
+               "level": "A",
+               "criteria": "2.4.4"
+            }
+         },
+         "aria-label": {
+            "errorText": "aria-label is not present on &lt;a&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.4"
+         },
+         "aria-labelledby": {
+            "errorText": "aria-labelledby is not present on &lt;a&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.4"
+         },
+         "aria-describedby": {
+            "errorText": "aria-describedby is not present on &lt;a&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Links",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.4.4"
+         }
+      },
+      "recommendations": {
+         "rel": "Ensure that value of rel attribute, provided to the &lt;a&gt; tag, is valid.",
+         "href": [
+            "Ensure that href attribute is provided to the &lt;a&gt; tag and it should have a valid value, to promote using &lt;a&gt; tags as links.",
+            "Ensure that user is informed about downloadable links."
+         ],
+         "tabindex": "Ensure that a valid value for tab index attribute is provided to the &lt;a&gt; tag.",
+         "content": [
+            "Ensure that &lt;a&gt; tag has proper link text in such a way that purpose of the link can be determined from it's text.",
+            "Ensure that unique text is provided to each and every &lt;a&gt; tag. If similar link text is provided to multiple &lt;a&gt tags, ensure that they are readily distinguishable by means of additional content."
+         ],
+         "title": "Ensure that 'title' attribute is used to provide additional text describing a link, to help clarify or further describe the purpose of a link",
+         "target": "Ensure the  value of target provided is valid.",
+         "data-toggle": {
+            "popover": "Ensure that data-content attribute is provided and not blank on &lt;a&gt; tag to open popover.",
+            "tooltip": "Ensure that title attribute is provided and not blank on &lt;a&gt; tag to display tooltip.",
+            "modal": "Ensure that there is an element related to data-target attribute of &lt;a&gt tag."
+         },
+         "aria-label": "Ensure that aria-label is provided on &lt;a&gt; img tag and it should not be empty. Clear and precise label text must be provided",
+         "aria-labelledby": "Ensure that aria-labelledby is provided on &lt;a&gt; img tag and it should be correctly associated with corresponding field.",
+         "aria-describedby": "Ensure that aria-describedby is provided on &lt;a&gt; img tag and it should be correctly associated with corresponding field."
+      },
+      "guidelines": "<div><h4 class='heading-bold'>All about Links</h5><p class='para'>Designate Links Correctly. Links need to be semantically designated as links in the markup. In other words, they need to be inside an &lt;a&gt; element, and they need a valid href value.</p><p class='para'>When retrofitting legacy markup, the ARIA role='link' can be a useful way to add heading semantics to markup without risking breaking any styles that might be attached to the legacy markup. Note that using real HTML links (&lt;a&gt;) is preferable when creating new markup, but the end result will be identical for screen reader users either way, as long as: <ul><li>The ARIA link is placed in the natural tab order with tabindex='0' AND</li><li>The associated JavaScript allows the user to activate the link with either a click action or the enter key (both event handlers must be present).</li></ul></p><p class='para'>It is almost always better — and easier — to use native HTML elements rather than add roles, additional attributes, and extra JavaScript to make something act like a feature that already exists in native HTML.</p><p class='para'>Links and buttons SHOULD be designated semantically according to their functions. Here are the main distinguishing factors between links and buttons: <ul><li>Links take users to different locations (either to a different page or to a different location on the same page);</li><li>Buttons activate scripted functionality (e.g. make a dialog appear, expand a collapsed menu, turn font bold, etc.), usually on the same page, but a button can also submit form data.</li></ul>And Screen reader users must be informed whether something is a button or a link.</p><p class='para'>A link MUST have programmatically-discernible text, as determined by the accessible name calculation algorithm. A link must have a text-based name associated with it so that screen readers can read something to users. If a link has no name associated with it, most screen readers will read the link destination in the href as a way to give users some sort of clue as the purpose of the link. The name of a link is calculated as follows (in order of precedence by screen readers): <ul><li>aria-labelledby</li><li>aria-label</li><li>Text contained between the opening &lt;a&gt; and closing </a> elements (including alt text on images)</li><li>title attribute (note that this is considered a last resort method for screen readers to find something; it should not be considered a primary technique for giving names to links)</li></ul></p><p class='para'>The purpose of each link SHOULD be able to be determined from the link text alone. Screen reader users often listen to links out of context, either by navigating through the links, or by using a keyboard command to list all of the links on the page. The best technique is to make sure all links make sense out of context. Also, The link text SHOULD NOT repeat the role ('link').</p><p class='para'>Features such as labels, names, and text alternatives for content that have the same functionality across multiple web pages MUST be consistently identified, with the help of additional text (which can be hidden so that it is available for Screen reader users only).</p><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "img": {
+      "attributes": {
+         "alt": true,
+         "src": true,
+         "title": true
+      },
+      "issues": {
+         "alt": [
+            {
+               "errorText": "Alternative text (alt attribute) is not provided for the &lt;img&gt; tag.",
+               "violation": true,
+               "category": "Images",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.1.1"
+            },
+            {
+               "errorText": "Alternative text (alt attribute) is not provided for the &lt;img&gt; tag, instead title attribute is present.",
+               "violation": true,
+               "category": "Images",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.1.1"
+            },
+            {
+               "errorText": "Alternative text (alt attribute) on the &lt;img&gt; tag consists of 'src' file name .",
+               "violation": false,
+               "category": "Images",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.1.1"
+            }
+         ],
+         "src": [
+            {
+               "errorText": "src not present or it's blank on &lt;img&gt; tag.",
+               "violation": true,
+               "category": "Images",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.1.1"
+            },
+            {
+               "errorText": "gif image is used in &lt;img&gt;",
+               "violation": false,
+               "category": "Images",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.1.1"
+            }
+         ],
+         "title": {
+            "errorText": "Value of title attribute is blank.",
+            "violation": false,
+            "category": "Images",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.1.1"
+         }
+      },
+      "recommendations": {
+         "alt": [
+            "Ensure that appropriate alternative text (alt attribute) is provided on &lt;img&gt; tag having Informative and Functional images. For Decorative images, provide empty (alt=' ') alt attribute.",
+            "Ensure that title attribute is utilised to provide additional information about the image and not as an alternative to alt text.",
+            "Ensure that appropriate alternative text (alt attribute) is provided on &lt;img&gt; tag having Informative and Functional images. For Decorative images, provide empty alt(alt=' ') attribute."
+         ],
+         "src": [
+            "Ensure that src attribute is provided on &lt;img&gt; tag with valid value.",
+            "Ensure that gif images are not used to deliver information."
+         ],
+         "title": "Ensure that if title is provided then it must have a valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>About Images</h5><p>Images must have text alternatives that describe the information or function represented by them. This ensures that images can be used by people with various disabilities. Images can be categorized as below, based on their usage in the page. <ul><li>Informative Images</li><li>Decorative Images</li><li>Functional Images</li><li>Images of Text</li></ul></p><h5 class='heading-bold'>Alternative Text Best Practices</h5><p class='para'>This section discusses how to address accessibility in various types of images, including informative images, decorative images, complex images, and animations. Good alternative text is: <ul><li>Discernible (screen readers can access the alternative text)</li><li>Meaningful (the alternative text accurately describes the image's purpose or author's intent in using the image)</li><li>Concise (the alternative text does not exceed about 250 characters, and preferably is much shorter than that)</li></ul></p><p class='para'>If the image is purely decorative or redundant, it's best to use a technique to hide the image from screen readers (e.g., use alt=' '). It is important to note that the alt=' ' technique only works in HTML content and cannot be used in Office files, such as Word documents or PowerPoint slides. In those programs, there is not currently a way to identify an image as purely decorative, so all images/graphics require an alternative text description.</p><h5 class='heading-bold'>The 'Accessible Name Calculation' for the &lt;img&gt; Element</h5><p class='para'>There are multiple ways of adding alternative text to images. The standard (preferred) way in most cases is the alt attribute, but there are other options.<ul><li><strong>aria-labelledby</strong> — If there is an aria-labelledby attribute, the text it refers to will override all other values.</li><li><strong>aria-label</strong> — The aria-label text will override all other values (if aria-labelledby is not specified).</li><li><strong>alt</strong> — This is the standard method of providing alternative text (note that the alt text won't be read at all if either an aria-labelledby attribute or an aria-label attribute is present).</li><li><strong>Title</strong> — Screen readers will read the title attribute text if no other method is present. Some screen readers (e.g. VoiceOver on OS X) treat the title attribute as an additional description for the image, and will read both the accessible name AND the title. Others (e.g. NVDA, JAWS) will not read the title if an accessible name is available through other methods. All screen readers read the title text if no other alternative text is provided</li></ul></p><h5 class='heading-bold'>Informative Images</h5><p class='para'>Images that convey content MUST have programmatically-discernible alternative text. The alternative text for informative images MUST be meaningful (accurately conveying the purpose of the image, and the author's intent in a way that is useful to those who cannot see the image).</p><p class='para'>The purpose of alt text is to provide a description of the image for blind people. The alt text must provide an appropriate substitute for not being able to see the image. The alternative text should clearly represent the purpose of the image so that the user understands — as easily as possible — why the image is there and what it represents.</p><p class='para'>Alternative text SHOULD NOT include words that identify the element as a graphic or image Screen readers announce 'image' or 'graphic' as they read the alternative text for an img; therefore, including 'image of' or 'graphic of' or 'photo of' in the alternative text is redundant in most cases. Only if it is important to convey that an image is a photograph or an illustration should those words be included in the alternative text.</p><p class='para'>The length of the alternative text for informative images SHOULD be concise (no more than about 250 characters), though there is no technical limit nor policy restriction on the length of alt text. You do not have to literally describe everything about the image in excruciating detail. Alternative text via the alt attribute is always intended to be brief, yet descriptive.</p></div>"
+   },
+   "button": {
+      "attributes": {
+         "content": true,
+         "data-target": true,
+         "modal": true
+      },
+      "issues": {
+         "content": [
+            {
+               "errorText": "&lt;button&gt; text is blank.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "Duplicate text present in &lt;button&gt;",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "alt attribute of &lt;img&gt; tag inside &lt;button&gt; is not present or it is blank.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "data-target": {
+            "errorText": "No element is found related to data-target attribute of &lt;button&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.1.1"
+         },
+         "modal": {
+            "errorText": "Unable to open modal as no element is found related to data-target attribute in &lt;button&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.1.1"
+         }
+      },
+      "recommendations": {
+         "content": [
+            "Ensure that contextual text is provided to &lt;button&gt; tag.",
+            "Ensure that duplicate text is not provided to &lt;button&gt; tag.",
+            "Ensure that alt attribute is provided with valid value on &lt;img&gt; tag within the &lt;button&gt; tag."
+         ],
+         "data-target": "Ensure that related data-target element is present for &lt;button&gt tag.",
+         "modal": "Ensure that there is an element related to data-target attribute in &lt;button&gt tag."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Form: Buttons</h5><p class='para'>For input elements of type 'image', the alt attribute of the input element is used to provide a functional label. This label indicates the button's function, but does not attempt to describe the image. The label is especially important if there are multiple submit buttons on the page that each lead to different results.</p><p class='para'>The label element is not used for the following because labels for these elements are provided via the value attribute (for Submit and Reset buttons), the alt attribute (for image buttons), or element content itself (button).<ul><li>Submit and Reset buttons (input type='submit' or input type='reset')</li><li>Image buttons ( input type='image')</li><li>Hidden input fields ( input type='hidden')</li><li>Script buttons (button elements or &lt;input type='button'&gt;)</li></ul></p></div>"
+   },
+   "figure": {
+      "attributes": {
+         "figcaption": true
+      },
+      "issues": {
+         "figcaption": {
+            "errorText": "Valid &lt;figcaption&gt; element is not present in &lt;figure&gt tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         }
+      },
+      "recommendations": {
+         "figcaption": "Ensure that &lt;figcaption&gt; element is provided within the &lt;figure&gt tag."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Tabular Data:</h5><p class='para'>Tabular data SHOULD be represented in a &lt;table&gt. Screen reader users are able to navigate data tables from cell to cell, in a multi-directional way. This structure and easy navigation ability with screen readers make tables well-suited to tabular data.</p><h5 class='heading-bold'>Table caption/name</h5></p class='para>Data tables SHOULD have a programmatically-associated caption or name. Screen readers read the caption or name of the table when users navigate to the table, giving users a sense of what the table is about. The caption element is the most straightforward way to give a name to a table.</p><p class='para'>The name/caption of a data table SHOULD describe the identity or purpose of the table accurately, meaningfully, and succinctly. And it SHOULD be unique within the context of other tables on the same page.</p><h5 class='heading-bold'>Table Headers</h5><p class='para'>Table headers MUST be designated with &lt;th&gt;. The only way that screen readers can know if a table cell is a header is by marking it with &lt;th&gt;.</p><h5 class='heading-bold'>Simple Header Associations</h5><p class='para'>Table data cells MUST be associated with their corresponding header cells. The scope attribute makes an explicit association between the table header cell and its corresponding data cells. For simple associations, the options are scope='col' for column headers, and scope='row' for row headers.</p><h5 class='heading-bold'>Grouped Header Associations</h5><p class='para'>Table data group headers MUST be associated with their corresponding data cell groups. When you merge table header cells, you need to designate one header as corresponding to multiple rows or columns. The easiest way is to use scope='rowgroup' or scope='colgroup'. Screen readers will read the multiple headers when navigating through the tables.</p><h5 class='heading-bold'>Complex Header Associations</h5><p class='para'>Header/data associations that cannot be designated with &lt;th&gt; and scope MUST be designated with headers plus id. Tables with a complex structure — in which data cells are merged or there are more than two levels of headers for any given dimension — require a different technique than simply marking the header cells with a scope of col, row, colgroup, or rowgroup. Each data cell must be explicitly associated with each corresponding header cell using headers and id.</p><h5 class='heading-bold'>Table Summary:</h5></p class='para'>A table summary is not required. Ideally the table would be simple enough and well-organized enough that the table is self-explanatory just by virtue of the headers and data structure. Even so, it can sometimes be helpful to provide a brief summary of the main points of the table, to help them understand data trends, data format, and/or other aspects of the table that can make the table more understandable to screen reader users.</p><p class='para'>Summaries should be brief and concise: usually a sentence or two, but perhaps longer for more complex tables. There are a few different ways of presenting table summaries:<ul><li>Put the summary in the paragraph preceding or following the table (with aria-describedby).</li><li>Put the summary in the table's <caption>, as long as the summary is brief.</li><li>Put the table in a &lt;figure&gt; and put the title and summary in the &lt;figcaption&gt;</li><li>Put the summary in the summary attribute (for versions of HTML prior to HTML 5)</li></ul></p><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "input": {
+      "attributes": {
+         "aria-label": true,
+         "aria-labelledby": true,
+         "aria-describedby": true,
+         "name": true,
+         "alt": true,
+         "title": true,
+         "modal": true,
+         "search": true,
+         "value": true,
+         "id": true,
+         "aria-required": true,
+         "role": true
+      },
+      "issues": {
+         "aria-label": {
+            "errorText": "aria-label is not present on &lt;input&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "aria-labelledby": {
+            "errorText": "aria-labelledby is not present on &lt;input&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "aria-describedby": {
+            "errorText": "aria-describedby is not present on &lt;input&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "name": {
+            "errorText": "name attribute is not present on &lt;input&gt img tag or it is empty.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "alt": {
+            "errorText": "alt attribute is not present or it's value is blank on &lt;input&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.1.1"
+         },
+         "title": {
+            "errorText": "title attribute is not present or it's value is blank on &lt;input&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.1.1"
+         },
+         "modal": {
+            "errorText": "unable to open modal as no element is found related to data-target attribute in &lt;input&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "search": {
+            "errorText": "aria-label or role='search' is blank or not present on &lt;input type='search'&gt",
+            "violation": true,
+            "category": "Navigation",
+            "criticality": "",
+            "level": "AA",
+            "criteria": "2.4.5"
+         },
+         "value": {
+            "errorText": "value attribute is not present or it is empty",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         },
+         "id": [
+            {
+               "errorText": "Input field within the form tag is not associated with label, using for-id attribute.",
+               "violation": true,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            },
+            {
+               "errorText": "Input field is associated with multiple labels.",
+               "violation": true,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            },
+            {
+               "errorText": "Checkbox/Radio input field is not associated with any label.",
+               "violation": true,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            }
+         ],
+         "aria-required": [
+            {
+               "errorText": "Native 'required' attribute is not specified for the input field.",
+               "violation": false,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            },
+            {
+               "errorText": "'aria-required' property is not specified for the input field.",
+               "violation": false,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            }
+         ],
+         "role": [
+            {
+               "errorText": "Grouping roles (eg: group, radiogroup etc) are not used to identify related form controls.",
+               "violation": true,
+               "category": "Forms",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-label": "Ensure that aria-label is provided on &lt;input&gt; img tag and it should not be empty. Clear and precise label text must be provided",
+         "aria-labelledby": "Ensure that aria-labelledby is provided on &lt;input&gt; img tag and it should not be empty.",
+         "aria-describedby": "Ensure that aria-describedby is provided on &lt;input&gt; img tag and it should not be empty.",
+         "name": "Ensure that name attribute is provided on &lt;input&gt; img tag and it should not be empty.",
+         "alt": "Ensure that alt attribute is provided on &lt;input&gt; img tag and it should not be empty.",
+         "title": "Ensure that title attribute is provided on &lt;input&gt; img tag and it should not be empty.",
+         "modal": "Ensure that there is an element related to data-target attribute in &lt;input&gt tag.",
+         "search": "Ensure that aria-label or role='search' is not blank or it is present on &lt;input type='search'&gt.",
+         "value": "Ensure that value attribute should not be blank or empty.",
+         "id": [
+            "Ensure that input fields inside form tag are associated with unique label using for-id attribute. 'Id' for the input field must match with the label's 'for' attribute.",
+            "Ensure that each input should be associated with unique label.",
+            "Ensure that all the checkbox and radio fields should be associated with unique label."
+         ],
+         "aria-required": "Ensure that programmatic indication for mandatory form fields is provided to the screen reader users using Native as well as ARIA properties.",
+         "role": [
+            "Ensure to mark up a set of related controls within a form as a group. Group 'radio' buttons using role='radiogroup'."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Form: Input</h5><p class='para'>For input elements of type 'image', the alt attribute of the input element is used to provide a functional label. This label indicates the button's function, but does not attempt to describe the image. The label is especially important if there are multiple submit buttons on the page that each lead to different results.</p><p class='para'>The label element is not used for the following because labels for these elements are provided via the value attribute (for Submit and Reset buttons), the alt attribute (for image buttons), or element content itself (button).<ul><li>Submit and Reset buttons (input type='submit' or input type='reset')</li><li>Image buttons ( input type='image')</li><li>Hidden input fields ( input type='hidden')</li><li>Script buttons (button elements or &lt;input type='button'&gt;)</li></ul></p></div>"
+   },
+   "meta": {
+      "attributes": {
+         "charset": true
+      },
+      "issues": {
+         "charset": {
+            "errorText": "Charset attribute is not present on &lt;meta&gt tag or it is empty.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "criteria": "1.1.1",
+            "level": "A"
+         }
+      },
+      "recommendations": {
+         "charset": "Ensure that Charset attribute is provided on &lt;meta&gt tag and it should not be empty."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Declaring character encodings in HTML</h5><p class='para'>You should always specify the encoding used for an HTML or XML page. If you don't, you risk that characters in your content are incorrectly interpreted. This is not just an issue of human readability, increasingly machines need to understand your data too. A character encoding declaration is also needed to process non-ASCII characters entered by the user in forms, in URLs generated by scripts, and so forth.</p><p class='para'>For the HTML syntax, Web developers are required to declare the character encoding. There are three ways to do that:<ul><li>Using a meta element with a charset attribute that specifies the encoding within the first 1024 bytes of the document; for instance, <meta charset='UTF-8'> could be used to specify the UTF-8 encoding.</li><li>At the transport level; for instance, by using the HTTP Content-Type header</li><li>Using a Unicode Byte Order Mark (BOM) character at the start of the file. This character provides a signature for the encoding used. </li></ul></p></div>"
+   },
+   "fieldset": {
+      "attributes": {
+         "form": true,
+         "legend": true
+      },
+      "issues": {
+         "form": {
+            "errorText": "&lt;fieldset&gt is not used inside &lt;form&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "legend": {
+            "errorText": "&lt;legend&gt tag is not present inside &lt;fieldset&gt tag or it is empty.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "form": "Ensure that &lt;fieldset&gt is used inside &lt;form&gt tag only.",
+         "legend": "Ensure that &lt;legend&gt tag is provided inside &lt;fieldset&gt tag with valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Forms</h5><p class='para'>Related form elements must be grouped under a Fieldset tag and each fieldset must have an associated legend. The objective of this is to provide a semantic grouping for related form controls. This allows users to understand the relationship of the controls and interact with the form more quickly and effectively.</p><p class='para'>Form controls can be grouped by enclosing them within the fieldset element. All controls within a given fieldset are then related. The first element inside the fieldset must be a legend element, which provides a label or description for the group. Avoid nesting fieldsets unnecessarily, as this can lead to confusion.</p><p class='para'>Grouping controls is most important for related radio buttons and checkboxes. A set of radio buttons or checkboxes is related when they all submit values for a single named field. They work in the same way as selection lists, allowing the user to choose from a set of options, except selection lists are single controls while radio buttons and checkboxes are multiple controls. It can also be useful to group other sets of controls less tightly related than radio buttons and checkboxes. For instance, several fields that collect a user's address might be grouped together with a legend of 'Address', thus providing a group level description for these controls.</p></div>"
+   },
+   "legend": {
+      "attributes": {
+         "fieldset": true
+      },
+      "issues": {
+         "fieldset": {
+            "errorText": "&lt;legend&gt is not used inside &lt;fieldset&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "fieldset": "Ensure that &lt;legend&gt is used inside &lt;fieldset&gt tag only."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Forms</h5><p class='para'>Related form elements must be grouped under a Fieldset tag and each fieldset must have an associated legend. The objective of this is to provide a semantic grouping for related form controls. This allows users to understand the relationship of the controls and interact with the form more quickly and effectively.</p><p class='para'>Form controls can be grouped by enclosing them within the fieldset element. All controls within a given fieldset are then related. The first element inside the fieldset must be a legend element, which provides a label or description for the group. Avoid nesting fieldsets unnecessarily, as this can lead to confusion.</p><p class='para'>Grouping controls is most important for related radio buttons and checkboxes. A set of radio buttons or checkboxes is related when they all submit values for a single named field. They work in the same way as selection lists, allowing the user to choose from a set of options, except selection lists are single controls while radio buttons and checkboxes are multiple controls. It can also be useful to group other sets of controls less tightly related than radio buttons and checkboxes. For instance, several fields that collect a user's address might be grouped together with a legend of 'Address', thus providing a group level description for these controls.</p></div>"
+   },
+   "dl": {
+      "attributes": {
+         "child": true
+      },
+      "issues": {
+         "child": {
+            "errorText": "Invalid child elements are present within &lt;dl&gt; tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "child": "Ensure that &lt;dl&gt; tag has valid child elements."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Lists:</h5><p class='para'>Lists MUST be constructed using the appropriate semantic markup. There are three main types of lists in HTML: <ul><li><strong>Unordered lists:</strong>(<ul>) render as bulleted lists of list items (<li>). Unordered lists should be used when a set of items can be placed in any order.</li><li><strong>Ordered lists</strong>(<ol>) render as numbered lists of list items (<li>). Ordered lists should be used when the list items need to be placed in a specific order.</li><li><strong>Definition lists (or Description lists in HTML5) </strong>(<dl>) render as paired terms (<dt>) and definitions (<dd>). Definition/description lists are used to pair a term with its definition or a name with a value.</li></ul></p><p class='para'>Screen readers notify users when they come to a list, and tell them how many items are in a list. This helps listeners know what they are listening to, and what to expect as they listen to it.</p><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H48.html' target='_blank' >Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "dt": {
+      "attributes": {
+         "parent": true
+      },
+      "issues": {
+         "parent": {
+            "errorText": "dt tag is not wrapped within dl tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "parent": "Ensure that dt tag is wrapped in dl tag and it must be the direct child element."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Lists:</h5><p class='para'>Lists MUST be constructed using the appropriate semantic markup. There are three main types of lists in HTML: <ul><li><strong>Unordered lists:</strong>(<ul>) render as bulleted lists of list items (<li>). Unordered lists should be used when a set of items can be placed in any order.</li><li><strong>Ordered lists</strong>(<ol>) render as numbered lists of list items (<li>). Ordered lists should be used when the list items need to be placed in a specific order.</li><li><strong>Definition lists (or Description lists in HTML5) </strong>(<dl>) render as paired terms (<dt>) and definitions (<dd>). Definition/description lists are used to pair a term with its definition or a name with a value.</li></ul></p><p class='para'>Screen readers notify users when they come to a list, and tell them how many items are in a list. This helps listeners know what they are listening to, and what to expect as they listen to it.</p><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H48.html' target='_blank' >Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "dd": {
+      "attributes": {
+         "parent": true
+      },
+      "issues": {
+         "parent": {
+            "errorText": "dd tag is not wrapped within dl tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "parent": "Ensure that dd tag is wrapped in dl tag."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Lists:</h5><p class='para'>Lists MUST be constructed using the appropriate semantic markup. There are three main types of lists in HTML: <ul><li><strong>Unordered lists:</strong>(<ul>) render as bulleted lists of list items (<li>). Unordered lists should be used when a set of items can be placed in any order.</li><li><strong>Ordered lists</strong>(<ol>) render as numbered lists of list items (<li>). Ordered lists should be used when the list items need to be placed in a specific order.</li><li><strong>Definition lists (or Description lists in HTML5) </strong>(<dl>) render as paired terms (<dt>) and definitions (<dd>). Definition/description lists are used to pair a term with its definition or a name with a value.</li></ul></p><p class='para'>Screen readers notify users when they come to a list, and tell them how many items are in a list. This helps listeners know what they are listening to, and what to expect as they listen to it.</p><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H48.html' target='_blank' >Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "label": {
+      "attributes": {
+         "for": true,
+         "content": true
+      },
+      "issues": {
+         "for": {
+            "errorText": "No element is found related to 'for' attribute or 'for' attribute is missing in &lt;label&gt tag.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "content": {
+            "errorText": "Empty Label tag is provided.",
+            "violation": true,
+            "category": "Forms",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "for": "Ensure that 'for' attribute is provided and there is an element related to for attribute of &lt;label&gt tag.",
+         "content": "Ensure that precise and contextual label text is provided for any input field."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Form Labels:</h5><p class='p'>For Form elements, proper label text must be provided. Ensure that the label for any interactive component within Web content makes the component's purpose clear. Using the appropriate technology-specific techniques for technologies for associating labels with interactive controls allows assistive technology to recognize the label and present it to the user, therefore allowing the user to identify the purpose of the control. The label may also be used to include text or a text symbol indicating that input is required.</p><p class='para'>&lt;label&gt; must be associated to corresponding form field. A label is attached to a specific form control through the use of the 'for' attribute. The value of the 'for' attribute must be the same as the value of the 'id' attribute of the form control. The id attribute may have the same value as the name attribute, but both must be provided, and the id must be unique in the Web page.</p><p class='para'>Elements that use explicitly associated labels are:<ul><li>input type='text'</li><li>input type='checkbox'</li><li>input type='radio'</li><li>input type='file'</li><li>input type='password'</li><li>textarea</li><li>select</li></ul></p><p class='para'>The label element is not used for the following because labels for these elements are provided via the value attribute (for Submit and Reset buttons), the alt attribute (for image buttons), or element content itself (button).<ul><li>Submit and Reset buttons (input type='submit' or input type='reset')</li><li>Image buttons ( input type='image')</li><li>Hidden input fields ( input type='hidden')</li><li>Script buttons (button elements or &lt;input type='button'&gt;)</li></ul></p></div>"
+   },
+   "table": {
+      "attributes": {
+         "caption": true,
+         "thead": true,
+         "summary": true
+      },
+      "issues": {
+         "caption": [
+            {
+               "errorText": "Caption must be the first element after &lt;table&gt tag.",
+               "violation": false,
+               "category": "Table",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            },
+            {
+               "errorText": "Empty caption tag is present.",
+               "violation": false,
+               "category": "Table",
+               "criticality": "",
+               "level": "A",
+               "criteria": "1.3.1"
+            }
+         ],
+         "thead": {
+            "errorText": "Table does not have Header tags and 'Scope' attribute.",
+            "violation": true,
+            "category": "Table",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "summary": {
+            "errorText": "Summary used to give an overview of the data table is same as the table 'Caption'",
+            "violation": false,
+            "category": "Table",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "caption": [
+            "Ensure that 'Caption' should be provided to &lt;table&gt tag, as a table identifier and it must be the first thing after the opening &lt;table&gt tag.",
+            "Ensure that provided caption element should not blank."
+         ],
+         "thead": "Ensure that &lt;th&gt; element is provided in &lt;thead&gt tag and it has corresponding 'scope' attribute defined.",
+         "summary": "Use 'Summary' to give an overview of the data table. It must be unique and shouldn't be the same as the table 'Caption'"
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Tabular Data:</h5><p class='para'>Tabular data SHOULD be represented in a &lt;table&gt. Screen reader users are able to navigate data tables from cell to cell, in a multi-directional way. This structure and easy navigation ability with screen readers make tables well-suited to tabular data.</p><h5 class='heading-bold'>Table caption/name</h5></p class='para>Data tables SHOULD have a programmatically-associated caption or name. Screen readers read the caption or name of the table when users navigate to the table, giving users a sense of what the table is about. The caption element is the most straightforward way to give a name to a table.</p><p class='para'>The name/caption of a data table SHOULD describe the identity or purpose of the table accurately, meaningfully, and succinctly. And it SHOULD be unique within the context of other tables on the same page.</p><h5 class='heading-bold'>Table Headers</h5><p class='para'>Table headers MUST be designated with &lt;th&gt;. The only way that screen readers can know if a table cell is a header is by marking it with &lt;th&gt;.</p><h5 class='heading-bold'>Simple Header Associations</h5><p class='para'>Table data cells MUST be associated with their corresponding header cells. The scope attribute makes an explicit association between the table header cell and its corresponding data cells. For simple associations, the options are scope='col' for column headers, and scope='row' for row headers.</p><h5 class='heading-bold'>Grouped Header Associations</h5><p class='para'>Table data group headers MUST be associated with their corresponding data cell groups. When you merge table header cells, you need to designate one header as corresponding to multiple rows or columns. The easiest way is to use scope='rowgroup' or scope='colgroup'. Screen readers will read the multiple headers when navigating through the tables.</p><h5 class='heading-bold'>Complex Header Associations</h5><p class='para'>Header/data associations that cannot be designated with &lt;th&gt; and scope MUST be designated with headers plus id. Tables with a complex structure — in which data cells are merged or there are more than two levels of headers for any given dimension — require a different technique than simply marking the header cells with a scope of col, row, colgroup, or rowgroup. Each data cell must be explicitly associated with each corresponding header cell using headers and id.</p><h5 class='heading-bold'>Table Summary:</h5></p class='para'>A table summary is not required. Ideally the table would be simple enough and well-organized enough that the table is self-explanatory just by virtue of the headers and data structure. Even so, it can sometimes be helpful to provide a brief summary of the main points of the table, to help them understand data trends, data format, and/or other aspects of the table that can make the table more understandable to screen reader users.</p><p class='para'>Summaries should be brief and concise: usually a sentence or two, but perhaps longer for more complex tables. There are a few different ways of presenting table summaries:<ul><li>Put the summary in the paragraph preceding or following the table (with aria-describedby).</li><li>Put the summary in the table's <caption>, as long as the summary is brief.</li><li>Put the table in a <figure> and put the title and summary in the <figcaption></li><li>Put the summary in the summary attribute (for versions of HTML prior to HTML 5)</li></ul></p> <a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></div>"
+   },
+   "th": {
+      "attributes": {
+         "scope": true
+      },
+      "issues": {
+         "scope": {
+            "errorText": "Table headers do not have proper scope attribute defined.",
+            "violation": true,
+            "category": "Table",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "scope": "Ensure that &lt;th&gt; element is provided in &lt;thead&gt tag having valid scope attribute."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Tabular Data</h5><p class='para'>Tabular data SHOULD be represented in a &lt;table&gt. Screen reader users are able to navigate data tables from cell to cell, in a multi-directional way. This structure and easy navigation ability with screen readers make tables well-suited to tabular data.</p><h5 class='heading-bold'>Table caption/name</h5></p class='para>Data tables SHOULD have a programmatically-associated caption or name. Screen readers read the caption or name of the table when users navigate to the table, giving users a sense of what the table is about. The caption element is the most straightforward way to give a name to a table.</p><p class='para'>The name/caption of a data table SHOULD describe the identity or purpose of the table accurately, meaningfully, and succinctly. And it SHOULD be unique within the context of other tables on the same page.</p><h5 class='heading-bold'>Table Headers</h5><p class='para'>Table headers MUST be designated with &lt;th&gt;. The only way that screen readers can know if a table cell is a header is by marking it with &lt;th&gt;.</p><h5 class='heading-bold'>Simple Header Associations</h5><p class='para'>Table data cells MUST be associated with their corresponding header cells. The scope attribute makes an explicit association between the table header cell and its corresponding data cells. For simple associations, the options are scope='col' for column headers, and scope='row' for row headers.</p><h5 class='heading-bold'>Grouped Header Associations</h5><p class='para'>Table data group headers MUST be associated with their corresponding data cell groups. When you merge table header cells, you need to designate one header as corresponding to multiple rows or columns. The easiest way is to use scope='rowgroup' or scope='colgroup'. Screen readers will read the multiple headers when navigating through the tables.</p><h5 class='heading-bold'>Complex Header Associations</h5><p class='para'>Header/data associations that cannot be designated with &lt;th&gt; and scope MUST be designated with headers plus id. Tables with a complex structure — in which data cells are merged or there are more than two levels of headers for any given dimension — require a different technique than simply marking the header cells with a scope of col, row, colgroup, or rowgroup. Each data cell must be explicitly associated with each corresponding header cell using headers and id.</p><h5 class='heading-bold'>Table Summary:</h5></p class='para'>A table summary is not required. Ideally the table would be simple enough and well-organized enough that the table is self-explanatory just by virtue of the headers and data structure. Even so, it can sometimes be helpful to provide a brief summary of the main points of the table, to help them understand data trends, data format, and/or other aspects of the table that can make the table more understandable to screen reader users.</p><p class='para'>Summaries should be brief and concise: usually a sentence or two, but perhaps longer for more complex tables. There are a few different ways of presenting table summaries:<ul><li>Put the summary in the paragraph preceding or following the table (with aria-describedby).</li><li>Put the summary in the table's <caption>, as long as the summary is brief.</li><li>Put the table in a <figure> and put the title and summary in the <figcaption></li><li>Put the summary in the summary attribute (for versions of HTML prior to HTML 5)</li></ul></p><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a</div>"
+   },
+   "emptytabletags": {
+      "attributes": {
+         "content": true
+      },
+      "issues": {
+         "content": {
+            "errorText": "Empty &lt;table&gt tag is present on the page.",
+            "violation": false,
+            "category": "Table",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "content": "Ensure that no empty tags are present on the page."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup for Tabular Data</h5><p class='para'>Tabular data SHOULD be represented in a &lt;table&gt. Screen reader users are able to navigate data tables from cell to cell, in a multi-directional way. This structure and easy navigation ability with screen readers make tables well-suited to tabular data.</p><h5 class='heading-bold'>Table caption/name</h5></p class='para>Data tables SHOULD have a programmatically-associated caption or name. Screen readers read the caption or name of the table when users navigate to the table, giving users a sense of what the table is about. The caption element is the most straightforward way to give a name to a table.</p><p class='para'>The name/caption of a data table SHOULD describe the identity or purpose of the table accurately, meaningfully, and succinctly. And it SHOULD be unique within the context of other tables on the same page.</p><h5 class='heading-bold'>Table Headers</h5><p class='para'>Table headers MUST be designated with &lt;th&gt;. The only way that screen readers can know if a table cell is a header is by marking it with &lt;th&gt;.</p><h5 class='heading-bold'>Simple Header Associations</h5><p class='para'>Table data cells MUST be associated with their corresponding header cells. The scope attribute makes an explicit association between the table header cell and its corresponding data cells. For simple associations, the options are scope='col' for column headers, and scope='row' for row headers.</p><h5 class='heading-bold'>Grouped Header Associations</h5><p class='para'>Table data group headers MUST be associated with their corresponding data cell groups. When you merge table header cells, you need to designate one header as corresponding to multiple rows or columns. The easiest way is to use scope='rowgroup' or scope='colgroup'. Screen readers will read the multiple headers when navigating through the tables.</p><h5 class='heading-bold'>Complex Header Associations</h5><p class='para'>Header/data associations that cannot be designated with &lt;th&gt; and scope MUST be designated with headers plus id. Tables with a complex structure — in which data cells are merged or there are more than two levels of headers for any given dimension — require a different technique than simply marking the header cells with a scope of col, row, colgroup, or rowgroup. Each data cell must be explicitly associated with each corresponding header cell using headers and id.</p><h5 class='heading-bold'>Table Summary:</h5></p class='para'>A table summary is not required. Ideally the table would be simple enough and well-organized enough that the table is self-explanatory just by virtue of the headers and data structure. Even so, it can sometimes be helpful to provide a brief summary of the main points of the table, to help them understand data trends, data format, and/or other aspects of the table that can make the table more understandable to screen reader users.</p><p class='para'>Summaries should be brief and concise: usually a sentence or two, but perhaps longer for more complex tables. There are a few different ways of presenting table summaries:<ul><li>Put the summary in the paragraph preceding or following the table (with aria-describedby).</li><li>Put the summary in the table's <caption>, as long as the summary is brief.</li><li>Put the table in a <figure> and put the title and summary in the <figcaption></li><li>Put the summary in the summary attribute (for versions of HTML prior to HTML 5)</li></ul></p><a class='reference-link' href='https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a</div>"
+   },
+   "audio": {
+      "attributes": {
+         "controls": true,
+         "track": true,
+         "source": true
+      },
+      "issues": {
+         "controls": {
+            "errorText": "control attribute is not provided to &lt;audio&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "track": {
+            "errorText": "&lt;track&gt; element is not present in &lt;audio&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "source": {
+            "errorText": "&lt;source&gt; element is not present in &lt;audio&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         }
+      },
+      "recommendations": {
+         "controls": "Ensure that control attribute is provided to &lt;audio&gt tag.",
+         "track": "Ensure that &lt;track&gt; element is provided to &lt;audio&gt tag.",
+         "source": "Ensure that &lt;source&gt; element is provided to &lt;audio&gt tag."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Multimedia: Audio / Video</h5><p class='para'>Any kind of content that requires a third-party browser plug-in or an external application presents a unique set of accessibility challenges. At the most basic level, the user may not have the plug-in or application at all, making the content completely unavailable to the user. It is best to provide an alternative version in HTML for users who don't have the required software. </p><p class='para'>For HTML5 Audio and Video tags, certain properties are available which can provide better user experience. Certain rules must be followed for such multimedia components: <ul><li>Ensure videos and animations do not flicker or flash 3 times per second or more. </li><li>Ensure media content does not auto-play</li></ul><li>If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level. </li><li>Audio and Video content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.</li><li>Ensure all videos have captions, transcripts, and audio descriptions</li></p><p class='para'>Certan interactive accessibility principles are as below:<ul><li>Ensure all interactive components (buttons, links, controls, etc.) are fully keyboard-accessible</li><li>Ensure all focusable items have a visual focus indicator</li><li></li>Ensure the name, role, and value (including state) of objects and interactive components are communicated to screen readers<li></li>Ensure all relevant live announcements are communicated to screen readers<li>Ensure the click targets are large enough to use on touch devices</li><li>Ensure users have control over the timing of events</li><li>Ensure the content can zoom and scale visually</li></ul></p><h5 class='heading-bold'>Video and Audio Alt Text, Transcript, Captions, Audio</h5><p class='para'>There is no alt attribute for video and audio. The alt attribute is not allowed on <video> or <audio> elements to add alternative text to videos, but there are other ways of making video content accessible:<ul><li>Synchronized captions</li><li>Text transcript</li><li>Audio Descriptions</li></ul></p><p class='para'>All prerecorded video MUST have synchronized captions. Captions make the dialog and narration accessible to deaf audiences. The captions must include all of the dialog and narration. The captions must also identify who is speaking, to eliminate any possible confusion. If there are other important sounds — such as applause, laughter, etc. — the caption should indicate those sounds, either in brackets or in parentheses.</p><p class='para'>Prerecorded audio content MAY have synchronized captions. Prerecorded audio-only content can be captioned too, though in most cases a text transcript will suffice.</p><p class='para'>All live video with dialog and/or narration MUST have synchronized captions. Live videos MUST have synchronized live captions. Live captioning requires a professional stenographer — a person who uses a stenograph machine to type the spoken content — and a live text feed that accompanies the video. A stenograph machine is similar to a computer keyboard in concept, but it has fewer keys and allows the trained stenographer to type in syllables or sounds, rather than only in individual letters.</p><p class='para'>Live audio consisting mainly of dialog and/or narration SHOULD have synchronized captions. If the live audio content contains dialog and/or narration, it is usually appropriate — and may in fact be necessary — to provide live synchronized captions. Live streaming of text descriptions can be useful even for things like music concerts, to give deaf audiences a sense of the event itself, in real time.</p><p class='para'>All prerecorded video and audio MUST have text transcripts. People who are both deaf and blind can neither hear nor see video or audio content. The only solution for deafblind users is a text transcript, which they would read via a refreshable braille output device. A text transcript is essentially a text log of all of the dialog and narration in a video, similar to the captions, but available separately from the video itself. The transcript can be presented on the web page itself (usually below the video), or on a separate web page (with a link from the video page), or in a popup dialog, or even in a separate document (e.g., a text file or MS Word document).</p><p class='para'>Videos MUST include audio descriptions of important visual content that is not conveyed through the audio. If a video has visual elements that aren't conveyed through the audio, that’s where audio descriptions can help. Audio descriptions are an audio track played simultaneously with the original video, with a narrator describing the important visual information to blind users. </p></div>"
+   },
+   "video": {
+      "attributes": {
+         "controls": true,
+         "track": true,
+         "source": true
+      },
+      "issues": {
+         "controls": {
+            "errorText": "control attribute is not provided to &lt;video&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "track": {
+            "errorText": "&lt;track&gt; element is not present in &lt;video&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "source": {
+            "errorText": "&lt;source&gt; element is not present in &lt;video&gt tag.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         }
+      },
+      "recommendations": {
+         "controls": "Ensure that control attribute is provided to &lt;video&gt tag.",
+         "track": "Ensure that &lt;track&gt; element is provided to &lt;video&gt tag.",
+         "source": "Ensure that &lt;source&gt; element is provided to &lt;video&gt tag."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Multimedia: Audio / Video</h5><p class='para'>Any kind of content that requires a third-party browser plug-in or an external application presents a unique set of accessibility challenges. At the most basic level, the user may not have the plug-in or application at all, making the content completely unavailable to the user. It is best to provide an alternative version in HTML for users who don't have the required software. </p><p class='para'>For HTML5 Audio and Video tags, certain properties are available which can provide better user experience. Certain rules must be followed for such multimedia components: <ul><li>Ensure videos and animations do not flicker or flash 3 times per second or more. </li><li>Ensure media content does not auto-play</li></ul><li>If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level. </li><li>Audio and Video content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.</li><li>Ensure all videos have captions, transcripts, and audio descriptions</li></p><p class='para'>Certan interactive accessibility principles are as below:<ul><li>Ensure all interactive components (buttons, links, controls, etc.) are fully keyboard-accessible</li><li>Ensure all focusable items have a visual focus indicator</li><li></li>Ensure the name, role, and value (including state) of objects and interactive components are communicated to screen readers<li></li>Ensure all relevant live announcements are communicated to screen readers<li>Ensure the click targets are large enough to use on touch devices</li><li>Ensure users have control over the timing of events</li><li>Ensure the content can zoom and scale visually</li></ul></p><h5 class='heading-bold'>Video and Audio Alt Text, Transcript, Captions, Audio</h5><p class='para'>There is no alt attribute for video and audio. The alt attribute is not allowed on <video> or <audio> elements to add alternative text to videos, but there are other ways of making video content accessible:<ul><li>Synchronized captions</li><li>Text transcript</li><li>Audio Descriptions</li></ul></p><p class='para'>All prerecorded video MUST have synchronized captions. Captions make the dialog and narration accessible to deaf audiences. The captions must include all of the dialog and narration. The captions must also identify who is speaking, to eliminate any possible confusion. If there are other important sounds — such as applause, laughter, etc. — the caption should indicate those sounds, either in brackets or in parentheses.</p><p class='para'>Prerecorded audio content MAY have synchronized captions. Prerecorded audio-only content can be captioned too, though in most cases a text transcript will suffice.</p><p class='para'>All live video with dialog and/or narration MUST have synchronized captions. Live videos MUST have synchronized live captions. Live captioning requires a professional stenographer — a person who uses a stenograph machine to type the spoken content — and a live text feed that accompanies the video. A stenograph machine is similar to a computer keyboard in concept, but it has fewer keys and allows the trained stenographer to type in syllables or sounds, rather than only in individual letters.</p><p class='para'>Live audio consisting mainly of dialog and/or narration SHOULD have synchronized captions. If the live audio content contains dialog and/or narration, it is usually appropriate — and may in fact be necessary — to provide live synchronized captions. Live streaming of text descriptions can be useful even for things like music concerts, to give deaf audiences a sense of the event itself, in real time.</p><p class='para'>All prerecorded video and audio MUST have text transcripts. People who are both deaf and blind can neither hear nor see video or audio content. The only solution for deafblind users is a text transcript, which they would read via a refreshable braille output device. A text transcript is essentially a text log of all of the dialog and narration in a video, similar to the captions, but available separately from the video itself. The transcript can be presented on the web page itself (usually below the video), or on a separate web page (with a link from the video page), or in a popup dialog, or even in a separate document (e.g., a text file or MS Word document).</p><p class='para'>Videos MUST include audio descriptions of important visual content that is not conveyed through the audio. If a video has visual elements that aren't conveyed through the audio, that’s where audio descriptions can help. Audio descriptions are an audio track played simultaneously with the original video, with a narrator describing the important visual information to blind users. </p></div>"
+   },
+   "track": {
+      "attributes": {
+         "kind": [
+            "captions",
+            "chapters",
+            "descriptions",
+            "metadata",
+            "subtitles"
+         ],
+         "src": true,
+         "srclang": true,
+         "label": true
+      },
+      "issues": {
+         "kind": {
+            "errorText": "Alternative for time based media is not present. Valid kind attribute may not be provided to &lt;audio&gt/&lt;video&gt tag or it is empty.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "src": {
+            "errorText": "src attribute is not provided to &lt;audio&gt/&lt;video&gt tag or it is empty.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "srclang": {
+            "errorText": "srclang attribute is not provided to &lt;audio&gt/&lt;video&gt tag or it is empty.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         },
+         "label": {
+            "errorText": "label attribute is not provided to &lt;audio&gt/&lt;video&gt tag or it is empty.",
+            "violation": true,
+            "category": "Multimedia",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.4.2"
+         }
+      },
+      "recommendations": {
+         "kind": "Ensure that kind attribute is provided to &lt;audio&gt/&lt;video&gt tag  with a valid value. It should have values for subtitles, captions & descriptions",
+         "src": "Ensure that src attribute is provided to &lt;audio&gt/&lt;video&gt tag with a valid value.",
+         "srclang": "Ensure that srclang attribute is provided to &lt;audio&gt/&lt;video&gt tag with a valid value.",
+         "label": "Ensure that label attribute is provided to &lt;audio&gt/&lt;video&gt tag with a valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Multimedia: Audio / Video</h5><p class='para'>Any kind of content that requires a third-party browser plug-in or an external application presents a unique set of accessibility challenges. At the most basic level, the user may not have the plug-in or application at all, making the content completely unavailable to the user. It is best to provide an alternative version in HTML for users who don't have the required software. </p><p class='para'>For HTML5 Audio and Video tags, certain properties are available which can provide better user experience. Certain rules must be followed for such multimedia components: <ul><li>Ensure videos and animations do not flicker or flash 3 times per second or more. </li><li>Ensure media content does not auto-play</li></ul><li>If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level. </li><li>Audio and Video content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.</li><li>Ensure all videos have captions, transcripts, and audio descriptions</li></p><p class='para'>Certan interactive accessibility principles are as below:<ul><li>Ensure all interactive components (buttons, links, controls, etc.) are fully keyboard-accessible</li><li>Ensure all focusable items have a visual focus indicator</li><li></li>Ensure the name, role, and value (including state) of objects and interactive components are communicated to screen readers<li></li>Ensure all relevant live announcements are communicated to screen readers<li>Ensure the click targets are large enough to use on touch devices</li><li>Ensure users have control over the timing of events</li><li>Ensure the content can zoom and scale visually</li></ul></p><h5 class='heading-bold'>Video and Audio Alt Text, Transcript, Captions, Audio</h5><p class='para'>There is no alt attribute for video and audio. The alt attribute is not allowed on <video> or <audio> elements to add alternative text to videos, but there are other ways of making video content accessible:<ul><li>Synchronized captions</li><li>Text transcript</li><li>Audio Descriptions</li></ul></p><p class='para'>All prerecorded video MUST have synchronized captions. Captions make the dialog and narration accessible to deaf audiences. The captions must include all of the dialog and narration. The captions must also identify who is speaking, to eliminate any possible confusion. If there are other important sounds — such as applause, laughter, etc. — the caption should indicate those sounds, either in brackets or in parentheses.</p><p class='para'>Prerecorded audio content MAY have synchronized captions. Prerecorded audio-only content can be captioned too, though in most cases a text transcript will suffice.</p><p class='para'>All live video with dialog and/or narration MUST have synchronized captions. Live videos MUST have synchronized live captions. Live captioning requires a professional stenographer — a person who uses a stenograph machine to type the spoken content — and a live text feed that accompanies the video. A stenograph machine is similar to a computer keyboard in concept, but it has fewer keys and allows the trained stenographer to type in syllables or sounds, rather than only in individual letters.</p><p class='para'>Live audio consisting mainly of dialog and/or narration SHOULD have synchronized captions. If the live audio content contains dialog and/or narration, it is usually appropriate — and may in fact be necessary — to provide live synchronized captions. Live streaming of text descriptions can be useful even for things like music concerts, to give deaf audiences a sense of the event itself, in real time.</p><p class='para'>All prerecorded video and audio MUST have text transcripts. People who are both deaf and blind can neither hear nor see video or audio content. The only solution for deafblind users is a text transcript, which they would read via a refreshable braille output device. A text transcript is essentially a text log of all of the dialog and narration in a video, similar to the captions, but available separately from the video itself. The transcript can be presented on the web page itself (usually below the video), or on a separate web page (with a link from the video page), or in a popup dialog, or even in a separate document (e.g., a text file or MS Word document).</p><p class='para'>Videos MUST include audio descriptions of important visual content that is not conveyed through the audio. If a video has visual elements that aren't conveyed through the audio, that’s where audio descriptions can help. Audio descriptions are an audio track played simultaneously with the original video, with a narrator describing the important visual information to blind users. </p></div>"
+   },
+   "source": {
+      "attributes": {
+         "src": true,
+         "type": true
+      },
+      "issues": {
+         "src": {
+            "errorText": "src attribute is not provided to &lt;source&gt tag or it is empty.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         },
+         "type": {
+            "errorText": "type attribute is not provided to &lt;source&gt tag or it is empty.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "1.3.1"
+         }
+      },
+      "recommendations": {
+         "src": "Ensure that src attribute is provided to &lt;source&gt tag with a valid value.",
+         "type": "Ensure that type attribute is provided to &lt;source&gt tag with a valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Multimedia: Audio / Video</h5><p class='para'>Any kind of content that requires a third-party browser plug-in or an external application presents a unique set of accessibility challenges. At the most basic level, the user may not have the plug-in or application at all, making the content completely unavailable to the user. It is best to provide an alternative version in HTML for users who don't have the required software. </p><p class='para'>For HTML5 Audio and Video tags, certain properties are available which can provide better user experience. Certain rules must be followed for such multimedia components: <ul><li>Ensure videos and animations do not flicker or flash 3 times per second or more. </li><li>Ensure media content does not auto-play</li></ul><li>If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level. </li><li>Audio and Video content need to be given proper textual alternatives so they can be understood by assistive technologies and their users.</li><li>Ensure all videos have captions, transcripts, and audio descriptions</li></p><p class='para'>Certan interactive accessibility principles are as below:<ul><li>Ensure all interactive components (buttons, links, controls, etc.) are fully keyboard-accessible</li><li>Ensure all focusable items have a visual focus indicator</li><li></li>Ensure the name, role, and value (including state) of objects and interactive components are communicated to screen readers<li></li>Ensure all relevant live announcements are communicated to screen readers<li>Ensure the click targets are large enough to use on touch devices</li><li>Ensure users have control over the timing of events</li><li>Ensure the content can zoom and scale visually</li></ul></p><h5 class='heading-bold'>Video and Audio Alt Text, Transcript, Captions, Audio</h5><p class='para'>There is no alt attribute for video and audio. The alt attribute is not allowed on <video> or <audio> elements to add alternative text to videos, but there are other ways of making video content accessible:<ul><li>Synchronized captions</li><li>Text transcript</li><li>Audio Descriptions</li></ul></p><p class='para'>All prerecorded video MUST have synchronized captions. Captions make the dialog and narration accessible to deaf audiences. The captions must include all of the dialog and narration. The captions must also identify who is speaking, to eliminate any possible confusion. If there are other important sounds — such as applause, laughter, etc. — the caption should indicate those sounds, either in brackets or in parentheses.</p><p class='para'>Prerecorded audio content MAY have synchronized captions. Prerecorded audio-only content can be captioned too, though in most cases a text transcript will suffice.</p><p class='para'>All live video with dialog and/or narration MUST have synchronized captions. Live videos MUST have synchronized live captions. Live captioning requires a professional stenographer — a person who uses a stenograph machine to type the spoken content — and a live text feed that accompanies the video. A stenograph machine is similar to a computer keyboard in concept, but it has fewer keys and allows the trained stenographer to type in syllables or sounds, rather than only in individual letters.</p><p class='para'>Live audio consisting mainly of dialog and/or narration SHOULD have synchronized captions. If the live audio content contains dialog and/or narration, it is usually appropriate — and may in fact be necessary — to provide live synchronized captions. Live streaming of text descriptions can be useful even for things like music concerts, to give deaf audiences a sense of the event itself, in real time.</p><p class='para'>All prerecorded video and audio MUST have text transcripts. People who are both deaf and blind can neither hear nor see video or audio content. The only solution for deafblind users is a text transcript, which they would read via a refreshable braille output device. A text transcript is essentially a text log of all of the dialog and narration in a video, similar to the captions, but available separately from the video itself. The transcript can be presented on the web page itself (usually below the video), or on a separate web page (with a link from the video page), or in a popup dialog, or even in a separate document (e.g., a text file or MS Word document).</p><p class='para'>Videos MUST include audio descriptions of important visual content that is not conveyed through the audio. If a video has visual elements that aren't conveyed through the audio, that’s where audio descriptions can help. Audio descriptions are an audio track played simultaneously with the original video, with a narrator describing the important visual information to blind users. </p></div>"
+   },
+   "abbr": {
+      "attributes": {
+         "title": true
+      },
+      "issues": {
+         "title": {
+            "errorText": "For &lt;abbr&gt; tag, value of title attribute is blank.",
+            "violation": false,
+            "category": "Content",
+            "criticality": "",
+            "level": "AAA",
+            "criteria": "3.1.4"
+         }
+      },
+      "recommendations": {
+         "title": "Ensure that for the &lt;abbr&gt; tag 'title' attribute is provided and it must have a valid value."
+      },
+      "guidelines": "<div><h5 class='giude-h1'>Abbr</h5><p>Images must have text alternatives that describe the information or function represented by them. This ensures that images can be used by people with various disabilities. Images can be categorized as below, based on their usage in the page. <ul><li>Informative Images</li><li>Decorative Images</li><li>Functional Images</li><li>Images of Text</li></ul></p><h5 class='heading-bold'>Alternative Text Best Practices</h5><p class='para'>This section discusses how to address accessibility in various types of images, including informative images, decorative images, complex images, and animations. Good alternative text is: <ul><li>Discernible (screen readers can access the alternative text)</li><li>Meaningful (the alternative text accurately describes the image's purpose or author's intent in using the image)</li><li>Concise (the alternative text does not exceed about 250 characters, and preferably is much shorter than that)</li></ul></p><p class='para'>If the image is purely decorative or redundant, it's best to use a technique to hide the image from screen readers (e.g., use alt=' '). It is important to note that the alt=' ' technique only works in HTML content and cannot be used in Office files, such as Word documents or PowerPoint slides. In those programs, there is not currently a way to identify an image as purely decorative, so all images/graphics require an alternative text description.</p><h5 class='heading-bold'>The 'Accessible Name Calculation' for the &lt;img&gt; Element</h5><p class='para'>There are multiple ways of adding alternative text to images. The standard (preferred) way in most cases is the alt attribute, but there are other options.<ul><li><strong>aria-labelledby</strong> — If there is an aria-labelledby attribute, the text it refers to will override all other values.</li><li><strong>aria-label</strong> — The aria-label text will override all other values (if aria-labelledby is not specified).</li><li><strong>alt</strong> — This is the standard method of providing alternative text (note that the alt text won't be read at all if either an aria-labelledby attribute or an aria-label attribute is present).</li><li><strong>Title</strong> — Screen readers will read the title attribute text if no other method is present. Some screen readers (e.g. VoiceOver on OS X) treat the title attribute as an additional description for the image, and will read both the accessible name AND the title. Others (e.g. NVDA, JAWS) will not read the title if an accessible name is available through other methods. All screen readers read the title text if no other alternative text is provided</li></ul></p><h5 class='heading-bold'>Informative Images</h5><p class='para'>Images that convey content MUST have programmatically-discernible alternative text. The alternative text for informative images MUST be meaningful (accurately conveying the purpose of the image, and the author's intent in a way that is useful to those who cannot see the image).</p><p class='para'>The purpose of alt text is to provide a description of the image for blind people. The alt text must provide an appropriate substitute for not being able to see the image. The alternative text should clearly represent the purpose of the image so that the user understands — as easily as possible — why the image is there and what it represents.</p><p class='para'>Alternative text SHOULD NOT include words that identify the element as a graphic or image Screen readers announce 'image' or 'graphic' as they read the alternative text for an img; therefore, including 'image of' or 'graphic of' or 'photo of' in the alternative text is redundant in most cases. Only if it is important to convey that an image is a photograph or an illustration should those words be included in the alternative text.</p><p class='para'>The length of the alternative text for informative images SHOULD be concise (no more than about 250 characters), though there is no technical limit nor policy restriction on the length of alt text. You do not have to literally describe everything about the image in excruciating detail. Alternative text via the alt attribute is always intended to be brief, yet descriptive.</p></div>"
+   },
+   "depricatedTags": {
+      "attributes": {
+         "error": true
+      },
+      "issues": {
+         "error": {
+            "errorText": "Depricated tag is used.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "2.3.1"
+         }
+      },
+      "recommendations": {
+         "error": "Ensure that no depricated tags are used in webpages."
+      },
+      "guidelines": "Depricated tags can provide accessibility problems"
+   },
+   "role": {
+      "attributes": {
+         "standAlone": [
+            "alert",
+            "alertdialog",
+            "application",
+            "description",
+            "button",
+            "checkbox",
+            "radio",
+            "radiogroup",
+            "dialog",
+            "directory",
+            "document",
+            "heading",
+            "img",
+            "link",
+            "log",
+            "marquee",
+            "presentation",
+            "progressbar",
+            "region",
+            "separator",
+            "slider",
+            "spinbutton",
+            "status",
+            "textbox",
+            "timer",
+            "toolbar",
+            "tooltip",
+            "navigation",
+            "search",
+            "note",
+            "banner",
+            "definition",
+            "main",
+            "contentinfo",
+            "complementary",
+            "form",
+            "combobox"
+         ],
+         "collective": {
+            "list": [
+               "listitem"
+            ],
+            "listbox": [
+               "option"
+            ],
+            "menu": [
+               "menuitem"
+            ],
+            "menubar": [
+               "menuitem"
+            ],
+            "tablist": [
+               "tab"
+            ],
+            "row": [
+               "columnheader",
+               "rowheader"
+            ],
+            "tree": [
+               "treeitem"
+            ],
+            "grid": [
+               "gridcell"
+            ]
+         }
+      },
+      "issues": {
+         "error": {
+            "errorText": "Invalid roles are provided.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         },
+         "complementary": [
+            {
+               "errorText": "Page has multiple tags with role='complementary' but these are not differentiated using 'aria-labelledby'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "form": [
+            {
+               "errorText": "Page has multiple tags having role='form' but these are not differentiated using 'aria-labelledby' or 'aria-label' or 'title'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "main": [
+            {
+               "errorText": "Page has multiple tags having role='main' but these are not differentiated using 'aria-labelledby'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "navigation": [
+            {
+               "errorText": "Page has multiple tags with role='navigation' but these are not differentiated using 'aria-labelledby'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "region": [
+            {
+               "errorText": "Page has multiple tags having role='region' but these are not differentiated using 'aria-labelledby' or 'aria-label' or 'title'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "checkbox": [
+            {
+               "errorText": "'aria-checked' is not provided for tag having role='checkbox'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "radio": [
+            {
+               "errorText": "'aria-checked' is not provided for tag having role='radio'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "Grouping role for 'radio' buttons (role='radiogroup') is not used to identify related form controls.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "link": [
+            {
+               "errorText": "tabindex is not provided for tag having role='link'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "alt attribute or aria-label is not provided for tag having role='link'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "presentation": {
+            "errorText": "alt attribute is provided for tag having role='presentation'.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         },
+         "progressbar": [
+            {
+               "errorText": "'aria-valuenow' is not provided for tag having role='progressbar'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemin' is not provided for tag having role='progressbar'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemax' is not provided for tag having role='progressbar'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "slider": [
+            {
+               "errorText": "tabindex is not provided for tag having role='slider'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemax' is not provided for tag having role='slider'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemin' is not provided for tag having role='slider'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuenow' is not provided for tag having role='slider'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' is not provided for tag having role='slider'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' value is invalid.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "spinbutton": [
+            {
+               "errorText": "tabindex is not provided for tag having role='spinbutton'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemax' is not provided for tag having role='spinbutton'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuemin' is not provided for tag having role='spinbutton'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-valuenow' is not provided for tag having role='spinbutton'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' is not provided for tag having role='spinbutton'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' value is invalid.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "combobox": [
+            {
+               "errorText": "'aria-expanded' is not provided for tag having role='combobox'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-haspopup' is not provided for tag having role='combobox'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-haspopup' value is invalid.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-owns' is not provided for tag having role='combobox'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-owns' value is invalid.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ],
+         "button": {
+            "errorText": "role='button' is provided which doesn't work with spacebar.",
+            "violation": false,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         }
+      },
+      "recommendations": {
+         "error": "Ensure that one of the valid ARIA roles are provided.",
+         "complementary": [
+            "Ensure that 'aria-labelledby' is provided when page has multiple tags having role='complementary', to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ],
+         "form": [
+            "Ensure that aria-labelledby or aria-label or title is provided when page has multiple tags having role='form', to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ],
+         "main": [
+            "Ensure that aria-labelledby is provided when page has multiple tags having role='main', to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ],
+         "navigation": [
+            "Ensure that aria-labelledby is provided when page has multiple tags having role='navigation', to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ],
+         "region": [
+            "Ensure that aria-labelledby or aria-label or title is provided when page has multiple tags having role='region', to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ],
+         "checkbox": [
+            "Ensure that 'aria-checked' is provided for tag having role='checkbox' and the value (True / False) for 'aria-checked' must change based upon user selection."
+         ],
+         "radio": [
+            "Ensure that 'aria-checked' is provided for tag having role='radio' and the value (True / False) for 'aria-checked' must change based upon user selection.",
+            "Ensure that role='radiogroup' is provided for a set of 'radio' buttons, to identify related form controls."
+         ],
+         "link": [
+            "Ensure that tabindex is provided for tags having role='link'.",
+            "Ensure that 'alt' attribute or 'aria-label' is provided for tags having role='link'."
+         ],
+         "presentation": "Ensure that 'alt' attribute is not provided for tags having role='presentation'.",
+         "progressbar": [
+            "Ensure that 'aria-valuenow' attribute is provided for tags having role='progressbar'.",
+            "Ensure that 'aria-valuemin' attribute is provided for tags having role='progressbar'.",
+            "Ensure that 'aria-valuemax' attribute is provided for tags having role='progressbar'."
+         ],
+         "slider": [
+            "Ensure that tabindex attribute is provided for tags having role='slider'.",
+            "Ensure that 'aria-valuemax' attribute is provided for tags having role='slider'.",
+            "Ensure that 'aria-valuemin' attribute is provided for tags having role='slider'.",
+            "Ensure that 'aria-valuenow' attribute is provided for tags having role='slider'.",
+            "Ensure that 'aria-labelledby' attribute is provided for tags having role='slider'.",
+            "Ensure that 'aria-labelledby' value is valid."
+         ],
+         "spinbutton": [
+            "Ensure that tabindex attribute is provided for tags having role='spinbutton'.",
+            "Ensure that 'aria-valuemax' attribute is provided for tags having role='spinbutton'.",
+            "Ensure that 'aria-valuemin' attribute is provided for tags having role='spinbutton'.",
+            "Ensure that 'aria-valuenow' attribute is provided for tags having role='spinbutton'.",
+            "Ensure that 'aria-valuenow' attribute is provided for tags having role='spinbutton'.",
+            "Ensure that 'aria-labelledby' value is valid."
+         ],
+         "combobox": [
+            "Ensure that 'aria-expanded' is provided for tags having role='combobox' and it's value must change based upon selection.",
+            "Ensure that 'aria-haspopup' is provided for tags having role='combobox'.",
+            "Ensure that 'aria-haspopup' has a valid value i.e. listbox",
+            "Ensure that 'aria-owns' attribute is provided for tags having role='combobox'.",
+            "Ensure that 'aria-owns' value is valid."
+         ],
+         "button": " Ensure that elements having role 'button' also works on space bar."
+      },
+      "guidelines": "<div><h5 class='text-bold'>ARIA Roles</h5><p class='para'>WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make Web content and Web applications more accessible to people with disabilities. ARIA is set of attributes, added with html elements to make more accessible by defining it’s state, role and properties.</p><p class='para'>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so. Do not change native semantics, unless you really have to. </p><p class='para'>A WAI-ARIA role is set on an element using a role attribute. Roles are defined and described by their characteristics. Characteristics define the structural function of a role, such as what a role is, concepts behind it, and what instances the role can or must contain.</p><h5 class='heading-bold'>Widget ARIA role: </h5><p class='para'>Certain roles act as standalone user interface widgets or as part of larger, composite widgets. Some commonly used roles are listed below: <ul><li>alert</li><li>alertdialog</li><li>button</li><li>checkbox</li><li>dialog</li><li>radio</li><li>checkbox</li><li>log</li><li>slider</li><li>textbox</li></ul></p><p class='para'>The following roles act as composite user interface widgets. These roles typically act as containers that manage other, contained widgets.<ul><li>combobox</li><li>grid</li><li>listbox</li><li>menu</li><li>menubar</li><li>radiogroup</li><li>tablist</li><li>tree</li><li>treegrid</li></ul></p><p class='para'>There is a wide range of ARIA roles, available, which can be implemented for better user experience.<a class='reference-link' href='https://www.w3.org/TR/wai-aria-1.1/' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></p</div>"
+   },
+   "aria": {
+      "attributes": {
+         "standAlone": [
+            "aria-autocomplete",
+            "aria-checked",
+            "aria-current",
+            "aria-disabled",
+            "aria-expanded",
+            "aria-haspopup",
+            "aria-hidden",
+            "aria-invalid",
+            "aria-label",
+            "aria-level",
+            "aria-multiline",
+            "aria-multiselectable",
+            "aria-orientation",
+            "aria-pressed",
+            "aria-readonly",
+            "aria-required",
+            "aria-selected",
+            "aria-sort",
+            "aria-valuemax",
+            "aria-valuemin",
+            "aria-valuenow",
+            "aria-valuetext",
+            "aria-live",
+            "aria-relevant",
+            "aria-atomic",
+            "aria-busy",
+            "aria-dropeffect",
+            "aria-dragged",
+            "aria-activedescendant",
+            "aria-controls",
+            "aria-describedby",
+            "aria-flowto",
+            "aria-labelledby",
+            "aria-owns",
+            "aria-posinset",
+            "aria-setsize"
+         ]
+      },
+      "issues": {
+         "error": {
+            "errorText": "Invalid aria attribute is provided.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         }
+      },
+      "recommendations": {
+         "error": "Ensure that one of the valid ARIA attribute are provided."
+      },
+      "guidelines": "<div><h5 class='text-bold'>ARIA Roles</h5><p class='para'>WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies. ARIA is set of attributes, added with html elements to make more accessible by defining it’s state, role and properties.</p><p class='para'>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so. Do not change native semantics, unless you really have to. </p><p class='para'>A WAI-ARIA role is set on an element using a role attribute. Roles are defined and described by their characteristics. Characteristics define the structural function of a role, such as what a role is, concepts behind it, and what instances the role can or must contain.</p><h5 class='heading-bold'>Widget ARIA role: </h5><p class='para'>Certain roles act as standalone user interface widgets or as part of larger, composite widgets. Some commonly used roles are listed below: <ul><li>alert</li><li>alertdialog</li><li>button</li><li>checkbox</li><li>dialog</li><li>radio</li><li>checkbox</li><li>log</li><li>slider</li><li>textbox</li></ul></p><p class='para'>The following roles act as composite user interface widgets. These roles typically act as containers that manage other, contained widgets.<ul><li>combobox</li><li>grid</li><li>listbox</li><li>menu</li><li>menubar</li><li>radiogroup</li><li>tablist</li><li>tree</li><li>treegrid</li></ul></p><p class='para'>There is a wide range of ARIA roles, available, which can be implemented for better user experience.<a class='reference-link' href='https://www.w3.org/TR/wai-aria-1.1/' target='_blank'> Reference link: <span class=''>to W3C Guidebook</span></a></p</div>"
+   },
+   "lang": {
+      "attributes": {
+         "content": true,
+         "langCheckList": [
+            "ab",
+            "aa",
+            "af",
+            "ak",
+            "sq",
+            "am",
+            "ar",
+            "an",
+            "hy",
+            "as",
+            "av",
+            "ae",
+            "ay",
+            "az",
+            "bm",
+            "ba",
+            "eu",
+            "be",
+            "bn",
+            "bh",
+            "bi",
+            "bs",
+            "br",
+            "bg",
+            "my",
+            "ca",
+            "ch",
+            "ce",
+            "ny",
+            "zh",
+            "zh-Hans",
+            "zh-Hant",
+            "cv",
+            "kw",
+            "co",
+            "cr",
+            "hr",
+            "cs",
+            "da",
+            "dv",
+            "nl",
+            "dz",
+            "en",
+            "eo",
+            "et",
+            "ee",
+            "fo",
+            "fj",
+            "fi",
+            "fr",
+            "ff",
+            "gl",
+            "gd",
+            "gv",
+            "ka",
+            "de",
+            "el",
+            "kl",
+            "gn",
+            "gu",
+            "ht",
+            "ha",
+            "he",
+            "hz",
+            "hi",
+            "ho",
+            "hu",
+            "is",
+            "io",
+            "ig",
+            "in",
+            "ia",
+            "ie",
+            "iu",
+            "ik",
+            "ga",
+            "it",
+            "ja",
+            "jv",
+            "kl",
+            "kn",
+            "kr",
+            "ks",
+            "kk",
+            "km",
+            "ki",
+            "rw",
+            "rn",
+            "ky",
+            "kv",
+            "kg",
+            "ko",
+            "ku",
+            "kj",
+            "lo",
+            "la",
+            "lv",
+            "li",
+            "ln",
+            "lt",
+            "lu",
+            "lg",
+            "lb",
+            "gv",
+            "mk",
+            "mg",
+            "ms",
+            "ml",
+            "mt",
+            "mi",
+            "mr",
+            "mh",
+            "mo",
+            "mn",
+            "na",
+            "nv",
+            "ng",
+            "nd",
+            "ne",
+            "no",
+            "nb",
+            "nn",
+            "ii",
+            "oc",
+            "oj",
+            "cu",
+            "or",
+            "om",
+            "os",
+            "pi",
+            "ps",
+            "fa",
+            "pl",
+            "pt",
+            "pa",
+            "qu",
+            "rm",
+            "ro",
+            "ru",
+            "se",
+            "sm",
+            "sg",
+            "sa",
+            "sr",
+            "sh",
+            "st",
+            "tn",
+            "sn",
+            "ii",
+            "sd",
+            "si",
+            "ss",
+            "sk",
+            "sl",
+            "so",
+            "nr",
+            "es",
+            "su",
+            "sw",
+            "ss",
+            "sv",
+            "tl",
+            "ty",
+            "tg",
+            "ta",
+            "tt",
+            "te",
+            "th",
+            "bo",
+            "ti",
+            "to",
+            "ts",
+            "tr",
+            "tk",
+            "tw",
+            "ug",
+            "uk",
+            "ur",
+            "uz",
+            "ve",
+            "vi",
+            "vo",
+            "wa",
+            "cy",
+            "wo",
+            "fy",
+            "xh",
+            "yi",
+            "ji",
+            "yo",
+            "za",
+            "zu"
+         ]
+      },
+      "issues": {
+         "langCheckList": {
+            "errorText": "Provided lang attribute is incorrect or empty.",
+            "violation": true,
+            "category": "Content",
+            "criticality": "",
+            "level": "A",
+            "criteria": "3.1.1"
+         }
+      },
+      "recommendations": {
+         "langCheckList": "Ensure the 'lang' attribute is provided to the &lt;html&gt; tag  and has a valid value."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Primary Language of the page</h5><p class='para'>Users select a default language when installing and configuring their screen reader, so if no language is specified in the HTML document, the screen reader will read the document in the user's default language. </p><p class='para'>The primary language of the page MUST be identified accurately on the &lt;html&gt; element. If the language is not specified, or if it the language designation is inaccurate, a screen reader will read the document in the user's default language, which may result in a very bad accent if the page language doesn't match the user's default. In fact, it can be very difficult to understand anything when screen readers are using the wrong language library.</p><p class='para'>The primary language of the page MUST be identified with a valid value on the &lt;html&gt; element. The language designation must come from a standard list of language codes, which includes en (English), fr (French), es (Spanish), and others, according to the specification. Anything else (such as lang='English') will not work. Some screen readers support only two-letter codes. Other screen readers support regional language codes, such as en-us (American English) or fr-ca (French Canadian).</p><p class='para'><a class='reference-link' href='https://www.w3.org/TR/WCAG20-TECHS/H57.html'> Reference link: <span class=''>to W3C Guidebook</span></a></p</div>"
+   },
+   "contrastRatio": {
+      "attributes": {
+         "smallText": true,
+         "largeText": true,
+         "verySmall": true
+      },
+      "issues": {
+         "smallText": {
+            "errorText": "Contrast ratio is < 4.5:1",
+            "violation": true,
+            "category": "Color",
+            "criticality": "",
+            "level": "AA",
+            "criteria": "1.4.3"
+         },
+         "largeText": {
+            "errorText": "Contrast ratio is < 3:1",
+            "violation": true,
+            "category": "Color",
+            "criticality": "",
+            "level": "AA",
+            "criteria": "1.4.3"
+         },
+         "verySmall": {
+            "errorText": "Very small text found",
+            "violation": false,
+            "category": "Color",
+            "criticality": "",
+            "level": "AA",
+            "criteria": "1.4.3"
+         }
+      },
+      "recommendations": {
+         "smallText": "Ensure that for smaller text, contrast ratio must be atleast 4.5:1 if: <ul><li>font-size is < 18 and bold or </li><li>font-size < 24 and not bold</li></ul>",
+         "largeText": "Ensure that for larger text, contrast ratio must be atleast 3:1 if: <ul><li>font-size is > 18 and bold or </li><li>font-size > 24 and not bold</li></ul>",
+         "verySmall": "Very small text found. Ensure that for text font size should not be less than 10px'"
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Color Contrast</h5><p class='para'>Ensure that users can read text that is presented over a background. Color is an important asset in design of Web content, enhancing its aesthetic appeal, its usability, and its accessibility. However, some users have difficulty perceiving color.</p><p class='para'>People with partial sight often experience limited color vision, and many older users do not see color well. In addition, people using text-only, limited-color or monochrome displays and browsers will be unable to access information that is presented only in color. The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: <ul><li><strong>Large Text:</strong> Large-scale text (over 24 px or 18 px bold) and images of large-scale text have a contrast ratio of at least 3:1 and is perceivable to the user.</li><li><strong>Smaller Text: </strong>Smaller  text and images of text have a contrast ratio of at least 4.5:1 and the content is perceivable to the user (text is less than 24 px if not bold and less than 18 px if bold).</strong></li></ul></p></div>"
+   },
+   "same-id": {
+      "attributes": {
+         "content": true
+      },
+      "issues": {
+         "content": {
+            "errorText": "Same id found on multiple elements.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.1"
+         }
+      },
+      "recommendations": {
+         "content": "Ensure that unique id's are provided to elements."
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Semantic Markup</h5><p>Invalid code doesn't always cause accessibility problems, but it can, especially if there are errors in the parts of the markup that screen readers rely on to communicate the semantics of the web page to users. Screen readers rely on IDs in the markup for a variety of things, including: <ul><li>Form labels(using &lt;label&gt; and the id attribute on the form field)</li><li>Table header associations(when using the headers plus id method)</li><li>Labels for custom JavaScript/ARIA widgets(when using aria-labelledby)</li><li>Descriptions for custom JavaScript/ARIA widgets(when using aria-describedby)</li><li>Other associations for custom JavaScript/ARIA widgets(using attributes like aria-controls, aria-owns, etc.)</li></ul></p><p>If there are two elements on the same page with the same ID, screen readers may read the information incorrectly (like reading the wrong label with a text input), which can cause screen reader users to input the wrong information, or at a minimum to be confused.</p><p class='para'>Also, Names, when provided, of block level elements (e.g. landmarks, tables, iframes, etc.) SHOULD be unique within a web page. Screen reader users have the ability to pull up lists of landmarks (e.g. navigation, sections, forms, etc.), tables, and other block level elements. To the extent possible, each element of the same type should be given a unique name, to allow users to distinguish them.</p><p class='para'> For example, if you have two tables that both of a <caption> of 'Financial Results' screen reader users will not be able to tell the tables apart when they pull up the list of tables on the page.</p></div>"
+   },
+   "aside": {
+      "attributes": {
+         "aria-labelledby": true
+      },
+      "issues": {
+         "aria-labelledby": [
+            {
+               "errorText": "aria-labelledby is not provided on &lt;aside&gt tag as page has multiple aside tag.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-labelledby": [
+            "Ensure that 'aria-labelledby' is provided when page has multiple &lt;aside&gt; tags.",
+            "Ensure that 'aria-labelledby' value is valid given on &lt;aside&gt; tag."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Creating Landmarks (HTML 5, ARIA)</h5></p class='para'>Landmarks SHOULD be used to designate pre-defined parts of the layout (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.). Use either HTML 5 landmarks or their ARIA equivalents to mark sections of the layout in the design, so that screen reader users can easily find their way around the layout. </p><h5 class='heading-bold'>HTML 5 landmarks and their ARIA equivalents</h5><p class='para'>The alignment of ARIA roles and HTML 5 elements is not exact. The intentions and purposes are somewhat different between the two specifications, but the following data presents a reasonable interpretation of some of the ways HTML 5 and ARIA can overlap.</p><p class='para'>As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible. That said, the end result is effectively the same for screen reader users, so either one can be used. Adding ARIA roles to existing markup can sometimes be easier to manage, because adding new HTML elements can sometimes alter the visual appearance (and require extra CSS work), whereas ARIA roles do not.</p><h5 class='heading-bold'>Best Practices for Landmarks:</h5><p class='para'><ul><li>All text SHOULD be contained within a landmark region.</li><li>Multiple instances of the same type of landmark SHOULD be distinguishable by different discernible labels (aria-label or aria-labelledby)</li><li>A page SHOULD NOT contain more than one instance of each of the following landmarks: banner, main, and contentinfo.</li><li>The total number of landmarks SHOULD be minimized to the extent appropriate for the content.</li></ul></p></div>"
+   },
+   "main": {
+      "attributes": {
+         "aria-labelledby": true
+      },
+      "issues": {
+         "aria-labelledby": [
+            {
+               "errorText": "Page has multiple tags having role='main' but these are not differentiated using 'aria-labelledby'",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-labelledby": [
+            "Ensure that aria-labelledby is provided when page has multiple &lt;main&gt; tags, to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Creating Landmarks (HTML 5, ARIA)</h5></p class='para'>Landmarks SHOULD be used to designate pre-defined parts of the layout (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.). Use either HTML 5 landmarks or their ARIA equivalents to mark sections of the layout in the design, so that screen reader users can easily find their way around the layout. </p><h5 class='heading-bold'>HTML 5 landmarks and their ARIA equivalents</h5><p class='para'>The alignment of ARIA roles and HTML 5 elements is not exact. The intentions and purposes are somewhat different between the two specifications, but the following data presents a reasonable interpretation of some of the ways HTML 5 and ARIA can overlap.</p><p class='para'>As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible. That said, the end result is effectively the same for screen reader users, so either one can be used. Adding ARIA roles to existing markup can sometimes be easier to manage, because adding new HTML elements can sometimes alter the visual appearance (and require extra CSS work), whereas ARIA roles do not.</p><h5 class='heading-bold'>Best Practices for Landmarks:</h5><p class='para'><ul><li>All text SHOULD be contained within a landmark region.</li><li>Multiple instances of the same type of landmark SHOULD be distinguishable by different discernible labels (aria-label or aria-labelledby)</li><li>A page SHOULD NOT contain more than one instance of each of the following landmarks: banner, main, and contentinfo.</li><li>The total number of landmarks SHOULD be minimized to the extent appropriate for the content.</li></ul></p></div>"
+   },
+   "nav": {
+      "attributes": {
+         "aria-labelledby": true
+      },
+      "issues": {
+         "aria-labelledby": [
+            {
+               "errorText": "Page has multiple &lt;nav&gt; tags but these are not differentiated using 'aria-labelledby'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-labelledby": [
+            "Ensure that 'aria-labelledby' is provided when page has multiple &lt;nav&gt; tags, to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on the &lt;nav&gt; tag. It must be properly associated with corresponding text."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Creating Landmarks (HTML 5, ARIA)</h5></p class='para'>Landmarks SHOULD be used to designate pre-defined parts of the layout (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.). Use either HTML 5 landmarks or their ARIA equivalents to mark sections of the layout in the design, so that screen reader users can easily find their way around the layout. </p><h5 class='heading-bold'>HTML 5 landmarks and their ARIA equivalents</h5><p class='para'>The alignment of ARIA roles and HTML 5 elements is not exact. The intentions and purposes are somewhat different between the two specifications, but the following data presents a reasonable interpretation of some of the ways HTML 5 and ARIA can overlap.</p><p class='para'>As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible. That said, the end result is effectively the same for screen reader users, so either one can be used. Adding ARIA roles to existing markup can sometimes be easier to manage, because adding new HTML elements can sometimes alter the visual appearance (and require extra CSS work), whereas ARIA roles do not.</p><h5 class='heading-bold'>Best Practices for Landmarks:</h5><p class='para'><ul><li>All text SHOULD be contained within a landmark region.</li><li>Multiple instances of the same type of landmark SHOULD be distinguishable by different discernible labels (aria-label or aria-labelledby)</li><li>A page SHOULD NOT contain more than one instance of each of the following landmarks: banner, main, and contentinfo.</li><li>The total number of landmarks SHOULD be minimized to the extent appropriate for the content.</li></ul></p></div>"
+   },
+   "form": {
+      "attributes": {
+         "aria-labelledby": true
+      },
+      "issues": {
+         "aria-labelledby": [
+            {
+               "errorText": "Page has multiple tags having role='form' but these are not differentiated using 'aria-labelledby' or 'aria-label' or 'title'.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-labelledby": [
+            "Ensure that 'aria-labelledby' or 'aria-label' or 'title' is provided when page has multiple tags having role='form', for proper differentiation and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on tag. It must be properly associated with corresponding text."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Creating Landmarks (HTML 5, ARIA)</h5></p class='para'>Landmarks SHOULD be used to designate pre-defined parts of the layout (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.). Use either HTML 5 landmarks or their ARIA equivalents to mark sections of the layout in the design, so that screen reader users can easily find their way around the layout. </p><h5 class='heading-bold'>HTML 5 landmarks and their ARIA equivalents</h5><p class='para'>The alignment of ARIA roles and HTML 5 elements is not exact. The intentions and purposes are somewhat different between the two specifications, but the following data presents a reasonable interpretation of some of the ways HTML 5 and ARIA can overlap.</p><p class='para'>As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible. That said, the end result is effectively the same for screen reader users, so either one can be used. Adding ARIA roles to existing markup can sometimes be easier to manage, because adding new HTML elements can sometimes alter the visual appearance (and require extra CSS work), whereas ARIA roles do not.</p><h5 class='heading-bold'>Best Practices for Landmarks:</h5><p class='para'><ul><li>All text SHOULD be contained within a landmark region.</li><li>Multiple instances of the same type of landmark SHOULD be distinguishable by different discernible labels (aria-label or aria-labelledby)</li><li>A page SHOULD NOT contain more than one instance of each of the following landmarks: banner, main, and contentinfo.</li><li>The total number of landmarks SHOULD be minimized to the extent appropriate for the content.</li></ul></p></div>"
+   },
+   "section": {
+      "attributes": {
+         "aria-labelledby": true
+      },
+      "issues": {
+         "aria-labelledby": [
+            {
+               "errorText": "Page has multiple tags having role='section' but these are not differentiated using 'aria-labelledby'",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            },
+            {
+               "errorText": "'aria-labelledby' has an Invalid value.",
+               "violation": true,
+               "category": "Markup",
+               "criticality": "",
+               "level": "A",
+               "criteria": "4.1.2"
+            }
+         ]
+      },
+      "recommendations": {
+         "aria-labelledby": [
+            "Ensure that 'aria-labelledby' or 'aria-label' or 'title' is provided when page has multiple &lt;section&gt; tags, to differentiate regions in the page and it must have a valid value.",
+            "Ensure that 'aria-labelledby' value is valid given on the &lt;section&gt; tag. It must be properly associated with corresponding text."
+         ]
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Creating Landmarks (HTML 5, ARIA)</h5></p class='para'>Landmarks SHOULD be used to designate pre-defined parts of the layout (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.). Use either HTML 5 landmarks or their ARIA equivalents to mark sections of the layout in the design, so that screen reader users can easily find their way around the layout. </p><h5 class='heading-bold'>HTML 5 landmarks and their ARIA equivalents</h5><p class='para'>The alignment of ARIA roles and HTML 5 elements is not exact. The intentions and purposes are somewhat different between the two specifications, but the following data presents a reasonable interpretation of some of the ways HTML 5 and ARIA can overlap.</p><p class='para'>As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible. That said, the end result is effectively the same for screen reader users, so either one can be used. Adding ARIA roles to existing markup can sometimes be easier to manage, because adding new HTML elements can sometimes alter the visual appearance (and require extra CSS work), whereas ARIA roles do not.</p><h5 class='heading-bold'>Best Practices for Landmarks:</h5><p class='para'><ul><li>All text SHOULD be contained within a landmark region.</li><li>Multiple instances of the same type of landmark SHOULD be distinguishable by different discernible labels (aria-label or aria-labelledby)</li><li>A page SHOULD NOT contain more than one instance of each of the following landmarks: banner, main, and contentinfo.</li><li>The total number of landmarks SHOULD be minimized to the extent appropriate for the content.</li></ul></p></div>"
+   },
+   "iframe": {
+      "attributes": {
+         "title": true
+      },
+      "issues": {
+         "title": {
+            "errorText": "title attribute is missing on &lt;iframe&gt; tag.",
+            "violation": true,
+            "category": "Markup",
+            "criticality": "",
+            "level": "A",
+            "criteria": "4.1.2"
+         }
+      },
+      "recommendations": {
+         "title": "Ensure that title should be present on &lt;iframe&gt tag ;"
+      },
+      "guidelines": "<div><h5 class='heading-bold'>Frame</h5><p class='para'>Even though the WCAG guidelines require the title attribute, JAWS reads the &lt;title&gt; element of the enclosed document instead, if available. Only if the enclosed document does not have a &lt;title&gt; element will JAWS read the title attribute of the &lt;iframe&gt;.</p><p class='para'>This behavior of giving priority to the enclosed document's &lt;title&gt; is a bit of a departure from the guidelines, but since all web pages are supposed to have meaningful &lt;title&gt; tags anyway, it shouldn't matter too much that JAWS behaves differently than the other screen readers in this regard.</p><p class='para'>A best practice would be to give the enclosed document a &lt;title&gt; that matches the title attribute of the parent document. This would ensure the same title is read across different screen readers.</p><ul><li>The source page of an iframe MUST have a valid, meaningful &lt;title&gt;</li><li>The iframe title MUST be accurate and descriptive</li><li>Frames MUST have a unique title (in the context of the page)</li></ul><h5 class='heading-bold'>Semantic structure across iframes</h5><p class='para'>Screen readers allow cross-frame navigation of semantic elements. Screen readers treat an &lt;iframe&gt; almost as if it is part of the same document that contains it. Users can access all of the content within an &lt;iframe&gt; using the same keystrokes that they would use to access the content if it were all in the same document.</p><p class='para>The heading hierarchy of an iframe SHOULD be designed to fit within the heading hierarchy of the parent document, if possible. If you have control over the content of the embedded document in the iframe, the best practice is to fit the iframe heading hierarchy into the proper place within the existing heading hierarchy of the parent page.</p><p class='para'>Hidden frames or frames that do not convey content to users SHOULD be hidden from assistive technologies using aria-hidden='true'.</p></div>"
+   }
+}
